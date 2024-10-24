@@ -1,0 +1,138 @@
+<div class="pipes-examples">
+  <h1>Ejemplos de Pipes Integrados en Angular</h1>
+
+  <section>
+    <h2>Pipes de Transformación de Texto</h2>
+    <div class="example">
+      <p><strong>LowerCasePipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ textoMayus }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ textoMayus | lowercase }}</p>
+      </div>
+      <p class="description">Convierte el texto en minúsculas.</p>
+    </div>
+    <div class="example">
+      <p><strong>UpperCasePipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ textoMin }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ textoMin | uppercase }}</p>
+      </div>
+      <p class="description">Convierte el texto en mayúsculas.</p>
+    </div>
+    <div class="example">
+      <p><strong>TitleCasePipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ texto }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ texto | titlecase }}</p>
+      </div>
+      <p class="description">Convierte las palabras del texto en mayúsculas iniciales.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pipes de Formateo de Números y Fechas</h2>
+    <div class="example">
+      <p><strong>CurrencyPipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ number }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ number | currency:'USD' }}</p>
+      </div>
+      <p class="description">Formatea un número como una moneda.</p>
+    </div>
+    <div class="example">
+      <p><strong>DatePipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ today }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ today | date:'shortDate' }}</p>
+      </div>
+      <p class="description">Formatea una fecha en un formato corto.</p>
+    </div>
+    <div class="example">
+      <p><strong>DecimalPipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ number }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ number | number:'1.2-2' }}</p>
+      </div>
+      <p class="description">Formatea el número con decimales controlados.</p>
+    </div>
+    <div class="example">
+      <p><strong>PercentPipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ porcentaje }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ porcentaje | percent }}</p>
+      </div>
+      <p class="description">Convierte un número en un porcentaje.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pipes de Transformación de Objetos</h2>
+    <div class="example">
+      <p><strong>JsonPipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ obj }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ obj | json }}</p>
+      </div>
+      <p class="description">Convierte un objeto en JSON.</p>
+    </div>
+    <div class="example">
+      <p><strong>KeyValuePipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ obj }}</p>
+        <span class="arrow">→</span>
+        <ul>
+          <li *ngFor="let item of obj | keyvalue">{{ item.key }}: {{ item.value }}</li>
+        </ul>
+      </div>
+      <p class="description">Convierte un objeto en pares clave-valor.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Otros Pipes</h2>
+    <div class="example">
+      <p><strong>AsyncPipe (Promesa):</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ promise }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ promise | async }}</p>
+      </div>
+      <p class="description">Resuelve automáticamente una promesa.</p>
+    </div>
+    <div class="example">
+      <p><strong>I18nPluralPipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ messages.length }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ messages.length | i18nPlural: mapping }}</p>
+      </div>
+      <p class="description">Muestra mensajes pluralizados.</p>
+    </div>
+    <div class="example">
+      <p><strong>I18nSelectPipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ gender }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ gender | i18nSelect: genderMap }}</p>
+      </div>
+      <p class="description">Muestra un texto personalizado basado en el género.</p>
+    </div>
+    <div class="example">
+      <p><strong>SlicePipe:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> 'abcdef'</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ 'abcdef' | slice:1:4 }}</p>
+      </div>
+      <p class="description">Extrae una porción de un string.</p>
+    </div>
+  </section>
+</div>
