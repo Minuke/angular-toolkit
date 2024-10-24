@@ -1,0 +1,53 @@
+<div class="container">
+  <h1>Eventos con HostListener</h1>
+  
+  <div class="event-section">
+    <h2>Tecla Enter</h2>
+    <p>Presionaste Enter <strong>{{ enterCount }}</strong> veces.</p>
+    <input (keydown.enter)="handleEnterKey($event)" placeholder="Presiona Enter" class="input-box" />
+    <div class="button-group">
+      <button (click)="resetEnter()" class="btn reset-btn">Resetear Contador Enter</button>
+    </div>
+  </div>
+
+  <div class="event-section">
+    <h2>Clic</h2>
+    <p>Has hecho clic <strong>{{ clickCount }}</strong> veces.</p>
+    <div class="button-group">
+      <button (click)="handleClick($event)" class="btn primary-btn">Clic aquí</button>
+      <button (click)="resetClick()" class="btn reset-btn">Resetear Contador Clic</button>
+    </div>
+  </div>
+
+  <div class="event-section">
+    <h2>Doble Clic</h2>
+    <p>Has hecho doble clic <strong>{{ dblClickCount }}</strong> veces.</p>
+    <div class="button-group">
+      <button (dblclick)="handleDblClick($event)" class="btn primary-btn">Doble clic aquí</button>
+      <button (click)="resetDblClick()" class="btn reset-btn">Resetear Contador Doble Clic</button>
+    </div>
+  </div>
+
+  <div class="event-section" (mousemove)="handleMouseMove($event)">
+    <h2>Movimiento del Ratón</h2>
+    <p>Posición del ratón: X: <strong>{{ mouseX }}</strong>, Y: <strong>{{ mouseY }}</strong></p>
+  </div>
+
+  <div class="event-section">
+    <h2>Desplazamiento</h2>
+    <p>Desplaza el contenido en esta sección:</p>
+    <div class="scrollable" (scroll)="handleScroll($event)">
+      <p>Scroll me!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec mauris vitae lectus ultricies tristique...</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec mauris vitae lectus ultricies tristique...</p>
+    </div>
+    <p>La ventana ha sido desplazada <strong>{{ scrollCount }}</strong> veces.</p>
+  </div>
+
+  <div class="event-section">
+    <h2>Focus y Blur</h2>
+    <input (focus)="handleFocus()" (blur)="handleBlur()" placeholder="Haz clic aquí para obtener el foco" class="input-box" />
+    <p *ngIf="focusMessage">{{ focusMessage }}</p>
+    <p *ngIf="blurMessage">{{ blurMessage }}</p>
+  </div>
+</div>
