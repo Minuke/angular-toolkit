@@ -1,0 +1,37 @@
+<div class="pipes-examples">
+  <h1>Ejemplo de Pipe Personalizado: Potencial</h1>
+
+  <section>
+    <h2>Pipes Personalizados</h2>
+
+    <div class="example">
+      <p><strong>Potencia de {{potencia}} elevado a 2:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ potencia }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ potencia | potencial:2 }}</p>
+      </div>
+      <p class="description">Eleva el número a la potencia 2.</p>
+    </div>
+
+    <div class="example">
+      <p><strong>Potencia de {{potencia}} elevado a 3:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ potencia }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ potencia | potencial:3 }}</p>
+      </div>
+      <p class="description">Eleva el número a la potencia 3.</p>
+    </div>
+
+    <div class="example">
+      <p><strong>Potencia de {{potencia}} elevado a 4:</strong></p>
+      <div class="inline">
+        <p><em>Antes:</em> {{ potencia }}</p>
+        <span class="arrow">→</span>
+        <p><em>Después:</em> {{ potencia | potencial:4 }}</p>
+      </div>
+      <p class="description">Eleva el número a la potencia 4.</p>
+    </div>
+  </section>
+</div>

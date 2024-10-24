@@ -1,0 +1,85 @@
+.pipes-examples {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px auto;
+  max-width: 800px;
+
+  h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #3f51b5;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+
+    h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #dcdcdc;
+      text-transform: capitalize;
+    }
+
+    .example {
+      margin-bottom: 30px;
+
+      p {
+        font-size: 1.2em;
+        color: #555;
+        margin: 0;
+      }
+
+      .description {
+        font-size: 0.9em;
+        color: #888;
+        margin-top: 10px;
+        padding-left: 10px;
+        border-left: 3px solid #3f51b5;
+      }
+
+      .inline {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+
+        p {
+          margin: 0;
+        }
+
+        em {
+          font-weight: bold;
+          font-style: normal;
+          color: #0288d1;
+        }
+
+        .arrow {
+          font-size: 1.5em;
+          color: #333;
+        }
+      }
+
+      strong {
+        color: #0288d1;
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}
