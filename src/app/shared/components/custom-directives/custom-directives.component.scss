@@ -1,0 +1,42 @@
+.container {
+  max-width: 800px; /* Ancho máximo para centrar el contenido */
+  margin: 0 auto; /* Centrar horizontalmente */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.example {
+  display: inline; /* Usar flexbox para alinear imágenes lado a lado */
+  justify-content: space-around; /* Espacio uniforme entre los elementos */
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  .image-container {
+    text-align: center; /* Centrar texto en cada contenedor */
+    
+    .img-small {
+      width: 150px; /* Ancho fijo para ambas imágenes */
+      height: 150px; /* Altura fija para ambas imágenes */
+      object-fit: cover; /* Mantiene la relación de aspecto */
+      display: block;
+      margin: 0 auto; /* Centrar la imagen dentro de su contenedor */
+    }
+
+    .explanation {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 10px;
+    }
+  }
+}

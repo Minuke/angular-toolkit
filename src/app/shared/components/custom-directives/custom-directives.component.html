@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="header-title">Directiva Personalizada: ImgBroken</h2>
+  
+  <div class="example">
+    <div class="image-container">
+      <h3>Ejemplo de imagen encontrada</h3>
+      <img appImgBroken src="./images/angular-logo.svg" alt="Angular Logo" class="img-small" />
+      <p class="explanation">
+        Esta imagen se encuentra correctamente.
+      </p>
+    </div>
+
+    <div class="image-container">
+      <h3>Ejemplo de imagen no encontrada</h3>
+      <img appImgBroken src="./images/non-existent-image.svg" alt="Imagen no encontrada" class="img-small" />
+      <p class="explanation">
+        Directiva: <strong>ImgBrokenDirective</strong>. Esta imagen no se encuentra, por lo que se mostrará la imagen por defecto.
+      </p>
+    </div>
+  </div>
+</div>
