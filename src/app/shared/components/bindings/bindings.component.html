@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Ejemplos de Binding en Angular</h1>
+
+  <!-- Property Binding -->
+  <section class="binding-example">
+    <h2>Property Binding</h2>
+    <h3 [innerText]="title"></h3>
+    <p>
+      Este ejemplo ilustra <strong>Property Binding</strong> (de TypeScript a HTML). 
+      Cuando el valor de <code>title</code> en el componente cambia, el encabezado se actualiza automáticamente.
+    </p>
+  </section>
+
+  <!-- Event Binding -->
+  <section class="binding-example">
+    <h2>Event Binding</h2>
+    <button (click)="mostrarMensaje()">Haz clic aquí</button>
+    <p>
+      Este botón ilustra <strong>Event Binding</strong> (de HTML a TypeScript). 
+      Al hacer clic, se ejecuta la función <strong>mostrarMensaje()</strong> en el componente.
+    </p>
+  </section>
+
+  <!-- Two-Way Binding -->
+  <section class="binding-example">
+    <h2>Two-Way Binding</h2>
+    <input [(ngModel)]="user" placeholder="Introduce tu nombre" />
+    <p>Hola, {{ user }}!</p>
+    <p>
+      Este campo de entrada ilustra <strong>Two-Way Binding</strong> (en ambas direcciones). 
+      Cambiar el valor aquí actualiza la propiedad <strong>user</strong> en el componente, 
+      y viceversa: cambios en <strong>user</strong> actualizan el campo de entrada.
+    </p>
+  </section>
+</div>

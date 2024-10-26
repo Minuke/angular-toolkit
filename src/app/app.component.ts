@@ -6,11 +6,12 @@ import { CustomPipesComponent } from '@shared/components/custom-pipes/custom-pip
 import { HostListenerComponent } from '@shared/components/host-listener/host-listener.component';
 import { BuiltInDirectivesComponent } from '@shared/components/built-in-directives/built-in-directives.component';
 import { CustomDirectivesComponent } from '@shared/components/custom-directives/custom-directives.component';
+import { BindingsComponent } from '@shared/components/bindings/bindings.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent],
+  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

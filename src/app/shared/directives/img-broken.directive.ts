@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, inject } from '@angular/core';
 
 @Directive({
   selector: '[appImgBroken]',
@@ -7,12 +7,10 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class ImgBrokenDirective {
   
   @HostListener('error') handleError():void {
-    const elNative = this.host.nativeElement;
+    const elNative = this._host.nativeElement;
     elNative.src = "./images/image-not-found.svg"
   }
-  
-  constructor(private host:ElementRef) {
-    console.log(host)
-  }
 
+  private _host: ElementRef = inject(ElementRef);
+  
 }
