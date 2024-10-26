@@ -1,0 +1,110 @@
+// Variables de tema
+$primary-color: #2c3e50;
+$accent-color: #3498db;
+$background-color: #f4f4f9;
+$text-muted: #7f8c8d;
+
+// Contenedor principal centrado
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $background-color;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+// Título
+.header-title {
+  text-align: center;
+  color: $primary-color;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+// Estilos de ejemplo y explicación
+.example {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-left: 4px solid $accent-color;
+  background: lighten($accent-color, 40%);
+  border-radius: 5px;
+
+  p {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+  }
+}
+
+.explanation {
+  font-size: 0.85em;
+  color: $text-muted;
+  margin-top: 5px;
+}
+
+// Estilos para clases CSS de ngClass
+.color {
+  color: $accent-color;
+}
+
+.background {
+  background-color: lighten($accent-color, 40%);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+// Estilos de ngStyle
+p {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+  &.alert {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+
+  &.success {
+    background-color: #27ae60;
+    color: #fff;
+  }
+}
+
+// Input de ngModel
+input {
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid $accent-color;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+// Lista de ngFor
+ul {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+  }
+}
+
+// ngSwitch estilo condicional
+p {
+  &[ngSwitchCase] {
+    color: $primary-color;
+  }
+
+  &[ngSwitchDefault] {
+    color: #e74c3c;
+  }
+}

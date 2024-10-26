@@ -1,0 +1,101 @@
+<div class="container">
+  <!-- Título del componente -->
+  <h2 [ngClass]="{'header-title': true}">Directivas de Angular</h2>
+
+  <!-- Título para Directivas de Atributo -->
+  <h3>Directivas de Atributo</h3>
+  <p class="explanation">Las directivas de atributo cambian la apariencia o el comportamiento de un elemento, componente o cualquier otra cosa en el DOM.</p>
+
+  <!-- Ejemplos de ngClass -->
+  <h4>ngClass</h4>
+  <div class="example">
+    <p [ngClass]="'color'">Texto con clase 'color'</p>
+    <p class="explanation">Directiva: <strong>ngClass</strong>. Aplica la clase CSS 'color' al párrafo.</p>
+  </div>
+  <div class="example">
+    <p [ngClass]="['color', 'background']">Texto con clases 'color' y 'background'</p>
+    <p class="explanation">Directiva: <strong>ngClass</strong>. Aplica las clases 'color' y 'background' al párrafo.</p>
+  </div>
+  <div class="example">
+    <p [ngClass]="choose == 'first' ? 'color' : 'background'">Texto con clase condicional</p>
+    <p class="explanation">Directiva: <strong>ngClass</strong>. Aplica 'color' si <code>choose</code> es 'first'; si no, aplica 'background'.</p>
+  </div>
+  <div class="example">
+    <p [ngClass]="{'color': choose == 'first', 'background': choose != 'first'}">Texto con clases basadas en condiciones</p>
+    <p class="explanation">Directiva: <strong>ngClass</strong>. Aplica 'color' si <code>choose</code> es 'first'; si no, aplica 'background'.</p>
+  </div>
+
+  <!-- Ejemplos de ngStyle -->
+  <h4>ngStyle</h4>
+  <div class="example">
+    <p [ngStyle]="{'color':'red','background-color':'#ff0','text-align':'center', 'font-size.px':'24'}">Sitio fuera de servicio</p>
+    <p class="explanation">Directiva: <strong>ngStyle</strong>. Aplica estilos CSS estáticos directamente en el párrafo.</p>
+  </div>
+  <div class="example">
+    <p [ngStyle]="{'color': color}">Sitio fuera de servicio</p>
+    <p class="explanation">Directiva: <strong>ngStyle</strong>. Aplica el color definido en la variable <code>color</code>.</p>
+  </div>
+  <div class="example">
+    <p [ngStyle]="{'color': retornarColor()}">Sitio fuera de servicio</p>
+    <p class="explanation">Directiva: <strong>ngStyle</strong>. Aplica el color retornado por la función <code>retornarColor()</code>.</p>
+  </div>
+  <div class="example">
+    <p [ngStyle]="presentacion">Sitio fuera de servicio</p>
+    <p class="explanation">Directiva: <strong>ngStyle</strong>. Aplica estilos CSS definidos en el objeto <code>presentacion</code>.</p>
+  </div>
+  <div class="example">
+    <p [ngStyle]="{'color': colorear === 'color' ? 'blue' : 'red'}">Sitio fuera de servicio</p>
+    <p class="explanation">Directiva: <strong>ngStyle</strong>. Aplica color azul si <code>colorear</code> es 'color'; si no, aplica rojo.</p>
+  </div>
+
+  <!-- Input con ngModel -->
+  <h4>ngModel</h4>
+  <div class="example">
+    <input [(ngModel)]="choose" placeholder="Escribe 'first' o algo más" />
+    <p class="explanation">Directiva: <strong>ngModel</strong>. Sincroniza el valor del input con la variable <code>choose</code>.</p>
+  </div>
+
+  <!-- Título para Directivas Estructurales -->
+  <h3>Directivas Estructurales</h3>
+  <p class="explanation">Las directivas estructurales cambian el diseño del DOM agregando o eliminando elementos del DOM.</p>
+
+  <!-- Ejemplos de Directivas Estructurales -->
+  <div *ngIf="choose === 'first'" class="example">
+    <h4>if</h4>
+    <p>Este párrafo solo se muestra si <code>choose</code> es igual a 'first'</p>
+    <p class="explanation">Directiva: <strong>if</strong>. Muestra o oculta el elemento basado en una condición.</p>
+  </div>
+  
+  <h4>for</h4>
+  <div class="example">
+    <ul>
+      @for (item of items; track item.id; let idx = $index, e = $even) {
+        <li>Item {{ idx + 1 }}: {{ item.name }} - 
+          <span *ngIf="e">Par</span>
+          <span *ngIf="!e">Impar</span>
+        </li>
+      } @empty {
+        <li aria-hidden="true">No hay elementos.</li>
+      }
+    </ul>
+    <p class="explanation">
+      Directiva: <strong>for</strong>. Itera sobre el arreglo <code>items</code> usando <code>track item.id</code> para optimizar el rendimiento, y usa <code>empty</code> para mostrar un mensaje cuando la lista esté vacía.
+    </p>
+  </div>
+
+  <h4>switch</h4>
+  <div class="example">
+    @switch (choose) {
+      @case ('first') {
+        <p>Opción 1 seleccionada</p>
+      }
+      @case ('second') {
+        <p>Opción 2 seleccionada</p>
+      }
+      @default {
+        <p>Opción desconocida</p>
+      }
+    }
+    <p class="explanation">Directiva: <strong>switch</strong>. Muestra diferentes elementos según el valor de <code>choose</code>.</p>
+  </div>
+</div>
