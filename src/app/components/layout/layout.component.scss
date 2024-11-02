@@ -9,10 +9,10 @@ body {
     "header header header"
     "sidebar main main"
     "footer footer footer";
-  grid-template-columns: 250px 1fr; /* Sidebar y Main */
-  grid-template-rows: auto 1fr auto; /* Altura dinámica */
-  gap: 10px; /* Espacio entre elementos */
-  min-height: 100vh; /* Asegura que ocupe todo el alto de la pantalla */
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  min-height: 100vh;
 }
 
 .header {
@@ -35,8 +35,8 @@ body {
   background-color: #ffffff;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive con auto-fit y minmax */
-  gap: 10px; /* Espacio entre los elementos en el main */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
 }
 
 .card {
@@ -56,7 +56,6 @@ body {
   font-size: 1.5em;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .grid-container {
     grid-template-areas:
@@ -64,7 +63,7 @@ body {
       "sidebar"
       "main"
       "footer";
-    grid-template-columns: 1fr; /* Columna única en mobile */
-    grid-template-rows: auto auto 1fr auto; /* Altura dinámica */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { PotencialPipe } from '@shared/pipes/potencial-pipe.pipe';
+import { PotencialPipe } from '@pipes/potencial-pipe.pipe';
+
 
 @Component({
   selector: 'app-custom-pipes',

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LayoutComponent } from './shared/components/layout/layout.component';
-import { BuiltInPipesComponent } from '@shared/components/built-in-pipes/built-in-pipes.component';
-import { CustomPipesComponent } from '@shared/components/custom-pipes/custom-pipes.component';
-import { HostListenerComponent } from '@shared/components/host-listener/host-listener.component';
-import { BuiltInDirectivesComponent } from '@shared/components/built-in-directives/built-in-directives.component';
-import { CustomDirectivesComponent } from '@shared/components/custom-directives/custom-directives.component';
-import { BindingsComponent } from '@shared/components/bindings/bindings.component';
+import { BindingsComponent } from './components/bindings/bindings.component';
+import { BuiltInDirectivesComponent } from './components/built-in-directives/built-in-directives.component';
+import { BuiltInPipesComponent } from './components/built-in-pipes/built-in-pipes.component';
+import { CustomDirectivesComponent } from './components/custom-directives/custom-directives.component';
+import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.component';
+import { HostListenerComponent } from './components/host-listener/host-listener.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @Component({
   selector: 'app-root',

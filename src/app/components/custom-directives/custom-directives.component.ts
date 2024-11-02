@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ImgBrokenDirective } from '@shared/directives/img-broken.directive';
+import { ImgBrokenDirective } from '@directives/img-broken.directive';
 
 @Component({
   selector: 'app-custom-directives',

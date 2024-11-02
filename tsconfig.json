@@ -28,9 +28,11 @@
       "@styles": ["styles/styles.scss"],
       "@assets": ["assets/*"],
       "@core/*": ["app/core/*"],
-      "@shared/*": ["app/shared/*"],
-      "@modules/*": ["app/modules/*"],
+      "@components/*": ["app/components/*"],
+      "@directives/*": ["app/directives/*"],
+      "@pipes/*": ["app/pipes/*"],
       "@pages/*": ["app/pages/*"],
+      "@features/*": ["app/features/*"],
     }
   },
   "angularCompilerOptions": {
