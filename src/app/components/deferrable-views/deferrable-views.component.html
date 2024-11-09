@@ -1,0 +1,16 @@
+<h1>Demostración de Vistas Diferibles en Angular</h1>
+
+<!-- Botón de interacción para cargar el componente diferido -->
+<button (click)="loadLargeComponent = true">Ver componente grande</button>
+
+<!-- Implementación del bloque defer -->
+@defer (on interaction) {
+  <app-large *ngIf="loadLargeComponent"></app-large>
+} @placeholder {
+  <div>Placeholder: El componente se cargará en breve...</div>
+} @loading (after 100ms; minimum 5s) {
+  <!-- Activa el modo lento para ver el loader -->
+  <img alt="Cargando..." src="loading.gif" />
+} @error {
+  <p>Error al cargar el componente. Por favor, intente nuevamente.</p>
+}

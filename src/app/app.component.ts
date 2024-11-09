@@ -7,11 +7,12 @@ import { CustomDirectivesComponent } from './components/custom-directives/custom
 import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.component';
 import { HostListenerComponent } from './components/host-listener/host-listener.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { DeferrableViewsComponent } from '@components/deferrable-views/deferrable-views.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent],
+  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
