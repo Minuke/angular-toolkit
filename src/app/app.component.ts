@@ -8,11 +8,12 @@ import { CustomPipesComponent } from './components/custom-pipes/custom-pipes.com
 import { HostListenerComponent } from './components/host-listener/host-listener.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { DeferrableViewsComponent } from '@components/deferrable-views/deferrable-views.component';
+import { ContentProjectionComponent } from '@components/content-projection/content-projection.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent],
+  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -5,4 +5,16 @@
 <!-- <app-built-in-directives></app-built-in-directives> -->
 <!-- <app-custom-directives></app-custom-directives> -->
 <!-- <app-bindings></app-bindings> -->
-<app-deferrable-views></app-deferrable-views>
+<!-- <app-deferrable-views></app-deferrable-views> -->
+<app-content-projection>
+  <!-- Proyecta el título -->
+  <h3 ngProjectAs="card-title">Este es el Título de la Tarjeta</h3>
+  
+  <!-- Proyecta el cuerpo usando el selector correcto -->
+  <div card-body>Este es el contenido principal de la tarjeta.</div>
+  
+  <!-- Contenido adicional que no coincide con "card-title" ni "card-body" -->
+  <p>Este es el contenido adicional en el pie de la tarjeta.</p>
+</app-content-projection>
+
+

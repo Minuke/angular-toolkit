@@ -1,0 +1,15 @@
+<div class="tarjeta-sombra">
+  <header class="tarjeta-header">
+    <ng-content select="card-title"></ng-content>
+  </header>
+  
+  <section class="tarjeta-body">
+    <ng-content select="[card-body]"></ng-content>
+  </section>
+
+  <div class="tarjeta-separador"></div>
+
+  <footer class="tarjeta-footer">
+    <ng-content></ng-content>
+  </footer>
+</div>
