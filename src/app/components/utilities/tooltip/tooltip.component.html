@@ -1,0 +1,52 @@
+<div class="tooltip-basic-demo">
+  <h2>Ejemplo Básico de Tooltip con Angular Material</h2>
+
+  <!-- Tooltip Básico -->
+  <button matTooltip="Este es un tooltip básico" aria-label="Ejemplo de Tooltip Básico">
+    Pasa el mouse aquí
+  </button>
+
+  <h2>Ejemplo de Tooltip con Diferentes Posiciones</h2>
+
+  <!-- Tooltip con Posiciones -->
+  <div class="tooltip-buttons">
+    <button mat-raised-button matTooltip="Tooltip arriba" matTooltipPosition="above" aria-label="Tooltip arriba">
+      Arriba
+    </button>
+    <button mat-raised-button matTooltip="Tooltip abajo" matTooltipPosition="below" aria-label="Tooltip abajo">
+      Abajo
+    </button>
+    <button mat-raised-button matTooltip="Tooltip a la izquierda" matTooltipPosition="left" aria-label="Tooltip izquierda">
+      Izquierda
+    </button>
+    <button mat-raised-button matTooltip="Tooltip a la derecha" matTooltipPosition="right" aria-label="Tooltip derecha">
+      Derecha
+    </button>
+  </div>
+
+  <h2>Ejemplo de Tooltip con Retraso para Mostrar y Ocultar</h2>
+
+  <!-- Tooltip con Retrasos para Mostrar y Ocultar -->
+  <button
+    mat-raised-button
+    matTooltip="Tooltip con retraso"
+    matTooltipShowDelay="1000"
+    matTooltipHideDelay="2000"
+    aria-label="Tooltip con retraso"
+  >
+    Pasa el mouse aquí (Retraso)
+  </button>
+
+  <h2>Ejemplo de Tooltip Deshabilitado</h2>
+
+  <!-- Tooltip Deshabilitado -->
+  <button
+    mat-raised-button
+    matTooltip="Este tooltip está deshabilitado"
+    [matTooltipDisabled]="true"
+    aria-label="Tooltip deshabilitado"
+  >
+    Tooltip Deshabilitado
+  </button>
+
+</div>
