@@ -9,14 +9,22 @@ import { HostListenerComponent } from './components/host-listener/host-listener.
 import { LayoutComponent } from './components/layout/layout.component';
 import { DeferrableViewsComponent } from '@components/deferrable-views/deferrable-views.component';
 import { ContentProjectionComponent } from '@components/content-projection/content-projection.component';
+import { InputComponent } from '@components/change-detection/input/input.component';
+import { DisplayComponent } from '@components/change-detection/display/display.component';
+import { MockComponent } from '@components/change-detection/mock/mock.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent],
+  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'angular-toolkit';
+
+  renderApp():boolean {
+    console.log("Render App");
+    return true;
+  }
 }

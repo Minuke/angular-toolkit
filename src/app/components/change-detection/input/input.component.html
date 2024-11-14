@@ -1,0 +1,3 @@
+<input [(ngModel)]="text" (ngModelChange)="onTextChange($event)" />
+<p>Render Input: {{renderInput()}}</p>
+<app-display [text]="text"></app-display>
