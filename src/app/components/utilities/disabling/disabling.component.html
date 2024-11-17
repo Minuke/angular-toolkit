@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>Pokémon</th>
+      <th>Habilidad</th>
+      <th>Acciones</th>
+      <th>Deshabilitar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr 
+      *ngFor="let pokemon of pokemons; let i = index" 
+      [class.deshabilitado]="pokemon.deshabilitado">
+      <td>{{ pokemon.nombre }}</td>
+      <td>{{ pokemon.habilidad }}</td>
+      <td>
+        <button (click)="accion(pokemon)">¡Acción!</button>
+      </td>
+      <td>
+        <button (click)="toggleDeshabilitado(pokemon, i)">
+          {{ pokemon.deshabilitado ? 'Deshabilitado' : 'Deshabilitar' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
