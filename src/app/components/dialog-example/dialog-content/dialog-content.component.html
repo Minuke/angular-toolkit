@@ -1,0 +1,18 @@
+<div class="dialog">
+  <div class="dialog-header">
+    <h2 mat-dialog-title>Hola, {{ data?.name || 'Invitado' }}!</h2>
+    <ng-container *ngIf="data?.icon">
+      <div class="dialog-icon-container">
+        <mat-icon class="dialog-icon">{{ data.icon }}</mat-icon>
+      </div>
+    </ng-container>
+  </div>
+  <mat-dialog-content>
+    Este es un ejemplo de un diálogo con múltiples configuraciones. 
+    Prueba los botones para experimentar diferentes comportamientos.
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-dialog-close type="button">Cancelar</button>
+    <button color="primary" [mat-dialog-close]="{ respuesta: 'Aceptado' }" type="submit">Aceptar</button>
+  </mat-dialog-actions>
+</div>

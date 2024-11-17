@@ -14,12 +14,13 @@ import { DisplayComponent } from '@components/change-detection/display/display.c
 import { MockComponent } from '@components/change-detection/mock/mock.component';
 import { EllipsisComponent } from '@components/utilities/ellipsis/ellipsis.component';
 import { TooltipComponent } from '@components/utilities/tooltip/tooltip.component';
+import { PrincipalComponent } from '@components/dialog-example/principal/principal.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent],
+  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
