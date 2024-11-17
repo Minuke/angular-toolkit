@@ -1,0 +1,14 @@
+<div class="text-input-container">
+  <!-- Primer filtro de texto con botón -->
+  <div class="text-input-section">
+    <h3>Filtro de Texto con Botón</h3>
+    <input type="text" [(ngModel)]="inputTextButton" placeholder="Enter text" />
+    <button (click)="printTextButton()">Print Text</button>
+  </div>
+
+  <!-- Segundo filtro de texto con debounce -->
+  <div class="text-input-section">
+    <h3>Filtro de Texto con Debounce</h3>
+    <input type="text" [(ngModel)]="inputTextDebounce" (ngModelChange)="printTextDebounce($event)" placeholder="Enter text" />
+  </div>
+</div>
