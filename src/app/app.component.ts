@@ -17,12 +17,13 @@ import { TooltipComponent } from '@components/utilities/tooltip/tooltip.componen
 import { PrincipalComponent } from '@components/dialog-example/principal/principal.component';
 import { FiltersComponent } from '@components/filters/filters.component';
 import { DisablingComponent } from '@components/utilities/disabling/disabling.component';
+import { SignalsComponent } from '@components/signals/signals.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent],
+  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
