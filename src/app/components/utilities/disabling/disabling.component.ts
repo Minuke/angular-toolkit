@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-disabling',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './disabling.component.html',
-  styleUrl: './disabling.component.scss'
+    selector: 'app-disabling',
+    imports: [CommonModule],
+    templateUrl: './disabling.component.html',
+    styleUrl: './disabling.component.scss'
 })
 export class DisablingComponent {
   pokemons = [

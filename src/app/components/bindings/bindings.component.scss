@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $primary-color: #007bff;
 $background-color: #f9f9f9;
 $text-color: #333;
@@ -18,7 +20,7 @@ $padding: 1.5rem;
   
   .binding-example {
     margin-bottom: 2rem;
-    border: 1px solid lighten($primary-color, 40%);
+    border: 1px solid color.adjust($primary-color, $lightness: 40%);
     border-radius: 5px;
     padding: $padding;
     background-color: white;
@@ -41,7 +43,7 @@ $padding: 1.5rem;
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: darken($primary-color, 10%);
+        background-color: color.adjust($primary-color, $lightness: -10%);
       }
     }
 

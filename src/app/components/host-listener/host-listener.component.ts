@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
 
 @Component({
-  selector: 'app-host-listener',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './host-listener.component.html',
-  styleUrl: './host-listener.component.scss'
+    selector: 'app-host-listener',
+    imports: [CommonModule],
+    templateUrl: './host-listener.component.html',
+    styleUrl: './host-listener.component.scss'
 })
 export class HostListenerComponent {
   enterCount = 0;

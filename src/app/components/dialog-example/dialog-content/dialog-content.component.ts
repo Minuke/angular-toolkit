@@ -4,11 +4,10 @@ import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent, Ma
 import {MatIconModule} from '@angular/material/icon';
 
 @Component({
-  selector: 'app-dialog-content',
-  standalone: true,
-  imports: [MatDialogContent, MatDialogTitle, MatDialogActions, MatDialogClose, MatIconModule, CommonModule],
-  templateUrl: './dialog-content.component.html',
-  styleUrl: './dialog-content.component.scss'
+    selector: 'app-dialog-content',
+    imports: [MatDialogContent, MatDialogTitle, MatDialogActions, MatDialogClose, MatIconModule, CommonModule],
+    templateUrl: './dialog-content.component.html',
+    styleUrl: './dialog-content.component.scss'
 })
 export class DialogContentComponent {
   constructor(

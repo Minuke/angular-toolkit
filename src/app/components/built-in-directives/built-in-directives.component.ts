@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-built-in-directives',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './built-in-directives.component.html',
-  styleUrl: './built-in-directives.component.scss'
+    selector: 'app-built-in-directives',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './built-in-directives.component.html',
+    styleUrl: './built-in-directives.component.scss'
 })
 export class BuiltInDirectivesComponent {
   choose: string = '';

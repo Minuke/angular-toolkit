@@ -4,11 +4,10 @@ import { debounceTime, distinctUntilChanged, Subject, Subscription } from 'rxjs'
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-filters',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './filters.component.html',
-  styleUrl: './filters.component.scss'
+    selector: 'app-filters',
+    imports: [FormsModule],
+    templateUrl: './filters.component.html',
+    styleUrl: './filters.component.scss',
 })
 export class FiltersComponent {
 

@@ -3,11 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { DisplayComponent } from '../display/display.component';
 
 @Component({
-  selector: 'app-input',
-  standalone: true,
-  imports: [FormsModule, DisplayComponent],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.scss'
+    selector: 'app-input',
+    imports: [FormsModule, DisplayComponent],
+    templateUrl: './input.component.html',
+    styleUrl: './input.component.scss'
 })
 export class InputComponent {
   public text:string = '';
