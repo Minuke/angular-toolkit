@@ -1,0 +1,12 @@
+<div>
+  <h3>Métodos de Envío</h3>
+  <ul>
+    <li *ngFor="let option of shippingOptions()">
+      <button (click)="changeShipping(option.id)"
+        [class.selected]="option.id === selectedOption().id">
+        {{ option.name }}
+      </button>
+    </li>
+  </ul>
+  <p>Opción seleccionada: {{ selectedOption().name }}</p>
+</div>

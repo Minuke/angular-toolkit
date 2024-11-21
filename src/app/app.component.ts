@@ -20,8 +20,10 @@ import { DisablingComponent } from '@components/utilities/disabling/disabling.co
 import { SignalsComponent } from '@components/signals/signals.component';
 import { ParentComponent } from '@components/communication/parent/parent.component';
 import { ParentBidirectionalComponent } from '@components/bidirectional/parent-bidirectional/parent-bidirectional.component';
+import { SelectorOpcionesComponent } from '@components/linked-signal/selector-opciones/selector-opciones.component';
+import { PreservarOpcionComponent } from '@components/linked-signal/preservar-opcion/preservar-opcion.component';
 
-// RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent, ParentBidirectionalComponent
+// RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent, ParentBidirectionalComponent, SelectorOpcionesComponent, PreservarOpcionComponent
 
 @Component({
     selector: 'app-root',
