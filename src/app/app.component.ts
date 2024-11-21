@@ -19,12 +19,13 @@ import { FiltersComponent } from '@components/filters/filters.component';
 import { DisablingComponent } from '@components/utilities/disabling/disabling.component';
 import { SignalsComponent } from '@components/signals/signals.component';
 import { ParentComponent } from '@components/communication/parent/parent.component';
+import { ParentBidirectionalComponent } from '@components/bidirectional/parent-bidirectional/parent-bidirectional.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent],
+  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent, ParentBidirectionalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
