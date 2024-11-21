@@ -18,12 +18,13 @@ import { PrincipalComponent } from '@components/dialog-example/principal/princip
 import { FiltersComponent } from '@components/filters/filters.component';
 import { DisablingComponent } from '@components/utilities/disabling/disabling.component';
 import { SignalsComponent } from '@components/signals/signals.component';
+import { ParentComponent } from '@components/communication/parent/parent.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent],
+  imports: [RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

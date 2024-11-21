@@ -1,0 +1,11 @@
+<div>
+  <h2>Componente Padre</h2>
+  <p><b>Mensaje recibido del hijo:</b> {{ mensajeDesdeHijo() }}</p>
+
+  <app-child
+    [mensaje]="mensajeParaHijo()"
+    (respuesta)="manejarRespuesta($event)"
+  ></app-child>
+
+  <button (click)="enviarNuevoMensaje()">Enviar nuevo mensaje al hijo</button>
+</div>
