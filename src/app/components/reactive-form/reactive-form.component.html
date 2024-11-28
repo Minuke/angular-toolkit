@@ -1,0 +1,70 @@
+<div class="container">
+  <!-- Formulario Reactivo -->
+  <form
+    [formGroup]="actorForm"
+    (ngSubmit)="onSubmit()"
+    class="form-container"
+    [class.was-validated]="submitted"
+  >
+    <!-- Nombre -->
+    <div class="form-group" [ngClass]="{ 'has-error': f['name'].invalid && f['name'].touched }">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        class="form-control"
+        formControlName="name"
+        type="text"
+      />
+      <!-- Mensajes de error -->
+      <div class="error-message" *ngIf="f['name'].invalid && f['name'].touched">
+        <small *ngIf="f['name'].errors?.['required']">Name is required.</small>
+        <small *ngIf="f['name'].errors?.['minlength']">Name must be at least 3 characters.</small>
+      </div>
+    </div>
+
+    <!-- Estudio -->
+    <div class="form-group" [ngClass]="{ 'has-error': f['studio'].invalid && f['studio'].touched }">
+      <label for="studio">Studio</label>
+      <input
+        id="studio"
+        class="form-control"
+        formControlName="studio"
+        type="text"
+      />
+      <!-- Mensajes de error -->
+      <div class="error-message" *ngIf="f['studio'].invalid && f['studio'].touched">
+        <small *ngIf="f['studio'].errors?.['required']">Studio is required.</small>
+      </div>
+    </div>
+
+    <!-- Habilidad -->
+    <div class="form-group" [ngClass]="{ 'has-error': f['skill'].invalid && f['skill'].touched }">
+      <label for="skill">Skill</label>
+      <select id="skill" class="form-control" formControlName="skill">
+        <option value="" disabled>Select a skill</option>
+        <option *ngFor="let skill of skills" [value]="skill">{{ skill }}</option>
+      </select>
+      <!-- Mensajes de error -->
+      <div class="error-message" *ngIf="f['skill'].invalid && f['skill'].touched">
+        <small *ngIf="f['skill'].errors?.['required']">Skill is required.</small>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="form-actions">
+      <button class="btn-submit" type="submit" [disabled]="actorForm.invalid">Submit</button>
+      <button class="btn-reset" type="button" (click)="resetForm()">Reset</button>
+    </div>
+  </form>
+
+  <!-- Información del modelo -->
+  <div class="model-data" *ngIf="submitted && actorForm.valid">
+    <h3>Submitted Data</h3>
+    <pre>{{ actorForm.value | json }}</pre>
+  </div>
+
+  <!-- Mensajes de error del formulario completo -->
+  <div class="error-message" *ngIf="actorForm.errors?.['nameStudioConflict']">
+    <small>Name cannot be the same as Studio.</small>
+  </div>
+</div>
