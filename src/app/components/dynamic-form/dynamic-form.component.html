@@ -1,1 +1,66 @@
-<p>dynamic-form works!</p>
+<div class="container">
+  <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()" class="form-container">
+    <!-- Campo para el nombre -->
+    <div class="form-group" [ngClass]="{ 'has-error': dynamicForm.get('name')?.invalid && dynamicForm.get('name')?.touched }">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        class="form-control"
+        placeholder="Enter your name"
+      />
+      <!-- Validaciones de errores -->
+      <div class="error-message" *ngIf="dynamicForm.get('name')?.invalid && dynamicForm.get('name')?.touched">
+        <small *ngIf="dynamicForm.get('name')?.errors?.['required']">Name is required.</small>
+        <small *ngIf="dynamicForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</small>
+        <small *ngIf="dynamicForm.get('name')?.errors?.['pattern']">Name can only contain letters and spaces.</small>
+      </div>
+    </div>
+
+    <!-- Teléfonos dinámicos -->
+    <div formArrayName="phones">
+      <div
+        class="form-group"
+        *ngFor="let phoneGroup of phones.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <label for="phone-{{ i }}">Phone {{ i + 1 }}</label>
+        <input
+          id="phone-{{ i }}"
+          type="text"
+          formControlName="phone"
+          class="form-control"
+          placeholder="Enter phone number"
+        />
+        <!-- Validaciones de errores -->
+        <div class="error-message" *ngIf="phoneGroup.get('phone')?.invalid && phoneGroup.get('phone')?.touched">
+          <small *ngIf="phoneGroup.get('phone')?.errors?.['required']">Phone number is required.</small>
+          <small *ngIf="phoneGroup.get('phone')?.errors?.['pattern']">Invalid phone number format. Use +123456789.</small>
+        </div>
+        <!-- Botón para eliminar -->
+        <button
+          type="button"
+          class="btn-remove"
+          (click)="removePhone(i)"
+          [disabled]="phones.length === 1"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="form-actions">
+      <button type="button" class="btn-add" (click)="addPhone()">Add Phone</button>
+      <button type="submit" class="btn-submit" [disabled]="dynamicForm.invalid">Submit</button>
+      <button type="button" class="btn-reset" (click)="resetForm()">Reset</button>
+    </div>
+  </form>
+
+  <!-- Información del modelo -->
+  <div class="model-data" *ngIf="submitted && dynamicForm.valid">
+    <h3>Submitted Data</h3>
+    <pre>{{ dynamicForm.value | json }}</pre>
+  </div>
+</div>

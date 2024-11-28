@@ -25,12 +25,13 @@ import { PreservarOpcionComponent } from '@components/linked-signal/preservar-op
 import { FormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from '@components/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from '@components/reactive-form/reactive-form.component';
+import { DynamicFormComponent } from '@components/dynamic-form/dynamic-form.component';
 
-// RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent, ParentBidirectionalComponent, SelectorOpcionesComponent, PreservarOpcionComponent, TemplateDrivenFormComponent
+// RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent, ParentBidirectionalComponent, SelectorOpcionesComponent, PreservarOpcionComponent, TemplateDrivenFormComponent, ReactiveFormComponent
 
 @Component({
     selector: 'app-root',
-    imports: [ReactiveFormComponent],
+    imports: [DynamicFormComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
