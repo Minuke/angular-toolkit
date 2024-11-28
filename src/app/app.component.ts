@@ -22,12 +22,14 @@ import { ParentComponent } from '@components/communication/parent/parent.compone
 import { ParentBidirectionalComponent } from '@components/bidirectional/parent-bidirectional/parent-bidirectional.component';
 import { SelectorOpcionesComponent } from '@components/linked-signal/selector-opciones/selector-opciones.component';
 import { PreservarOpcionComponent } from '@components/linked-signal/preservar-opcion/preservar-opcion.component';
+import { FormsModule } from '@angular/forms';
+import { TemplateDrivenFormComponent } from '@components/template-driven-form/template-driven-form.component';
 
 // RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent, ParentBidirectionalComponent, SelectorOpcionesComponent, PreservarOpcionComponent
 
 @Component({
     selector: 'app-root',
-    imports: [],
+    imports: [TemplateDrivenFormComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

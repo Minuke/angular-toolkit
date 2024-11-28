@@ -1,0 +1,79 @@
+<div class="container">
+  <!-- Formulario -->
+  <form
+    #actorForm="ngForm"
+    (ngSubmit)="onSubmit(actorForm)"
+    class="form-container"
+    [class.was-validated]="actorForm.submitted"
+  >
+    <!-- Nombre -->
+    <div class="form-group" [ngClass]="{ 'has-error': name.invalid && name.touched }">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        class="form-control"
+        [(ngModel)]="model.name"
+        #name="ngModel"
+        name="name"
+        required
+      />
+      <!-- Mensajes de error -->
+      <div class="error-message" *ngIf="name.invalid && name.touched">
+        <small *ngIf="name.errors?.['required']">Name is required.</small>
+      </div>
+    </div>
+
+    <!-- Estudio -->
+    <div class="form-group" [ngClass]="{ 'has-error': studio.invalid && studio.touched }">
+      <label for="studio">Studio</label>
+      <input
+        id="studio"
+        class="form-control"
+        [(ngModel)]="model.studio"
+        #studio="ngModel"
+        name="studio"
+        required
+      />
+      <!-- Mensajes de error -->
+      <div class="error-message" *ngIf="studio.invalid && studio.touched">
+        <small *ngIf="studio.errors?.['required']">Studio is required.</small>
+      </div>
+    </div>
+
+    <!-- Habilidad -->
+    <div class="form-group" [ngClass]="{ 'has-error': skill.invalid && skill.touched }">
+      <label for="skill">Skill</label>
+      <select
+        id="skill"
+        class="form-control"
+        [(ngModel)]="model.skill"
+        #skill="ngModel"
+        name="skill"
+        required
+      >
+        <option value="" disabled>Select a skill</option>
+        <option *ngFor="let skill of skills" [value]="skill">{{ skill }}</option>
+      </select>
+      <!-- Mensajes de error -->
+      <div class="error-message" *ngIf="skill.invalid && skill.touched">
+        <small *ngIf="skill.errors?.['required']">Skill is required.</small>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="form-actions">
+      <button class="btn-submit" type="submit" [disabled]="actorForm.invalid">
+        Submit
+      </button>
+      <button class="btn-reset" type="button" (click)="resetForm(actorForm)">
+        Reset
+      </button>
+    </div>
+  </form>
+
+  <!-- Información del modelo -->
+  <div class="model-data" *ngIf="submitted">
+    <h3>Submitted Data</h3>
+    <pre>{{ model | json }}</pre>
+  </div>
+</div>
