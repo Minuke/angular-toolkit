@@ -1,0 +1,20 @@
+@let tareas = tareasUsuario$ | async;
+
+<h1>Lista de Tareas</h1>
+@if (tareas?.length) {
+  <ul>
+    @for (tarea of tareas; track tarea.id) {
+      <li>
+        {{ tarea.descripcion }}
+        <span *ngIf="tarea.completada" style="color: green;">✔ Completada</span>
+        <button 
+          *ngIf="!tarea.completada" 
+          (click)="completarTarea(tarea.id)">
+          Marcar como completada
+        </button>
+      </li>
+    }
+  </ul>
+} @else {
+  <p>No hay tareas para mostrar.</p>
+}

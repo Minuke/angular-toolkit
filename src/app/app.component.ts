@@ -29,12 +29,13 @@ import { DynamicFormComponent } from '@components/dynamic-form/dynamic-form.comp
 import { SincronizarEstadoComponent } from '@components/linked-signal/sincronizar-estado/sincronizar-estado.component';
 import { CalculosPersonalizadosComponent } from '@components/linked-signal/calculos-personalizados/calculos-personalizados.component';
 import { EvitarCalculosComponent } from '@components/linked-signal/evitar-calculos/evitar-calculos.component';
+import { LetComponent } from '@components/let/let.component';
 
-// RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent, ParentBidirectionalComponent, SelectorOpcionesComponent, PreservarOpcionComponent, TemplateDrivenFormComponent, ReactiveFormComponent, DynamicFormComponent, SincronizarEstadoComponent, CalculosPersonalizadosComponent
+// RouterOutlet, LayoutComponent, BuiltInPipesComponent, CustomPipesComponent, HostListenerComponent, BuiltInDirectivesComponent, CustomDirectivesComponent, BindingsComponent, DeferrableViewsComponent, ContentProjectionComponent, InputComponent, DisplayComponent, MockComponent, EllipsisComponent, TooltipComponent, PrincipalComponent, FiltersComponent, DisablingComponent, SignalsComponent, ParentComponent, ParentBidirectionalComponent, SelectorOpcionesComponent, PreservarOpcionComponent, TemplateDrivenFormComponent, ReactiveFormComponent, DynamicFormComponent, SincronizarEstadoComponent, CalculosPersonalizadosComponent, EvitarCalculosComponent
 
 @Component({
     selector: 'app-root',
-    imports: [EvitarCalculosComponent],
+    imports: [LetComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
