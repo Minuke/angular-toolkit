@@ -1,0 +1,7 @@
+<h3>Productos disponibles:</h3>
+<ul>
+  <li *ngFor="let product of productOptions()">{{ product.name }}</li>
+</ul>
+<p>Producto favorito: {{ favoriteProductId() ?? 'Ninguno' }}</p>
+<button (click)="changeProductOptions()">Cambiar opciones de productos</button>
+<button (click)="setFavoriteProduct(2)">Seleccionar producto 2</button>

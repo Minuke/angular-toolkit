@@ -1,0 +1,5 @@
+<h3>Tareas completadas:</h3>
+<ul>
+  <li *ngFor="let task of completedTasks()">{{ task.name }}</li>
+</ul>
+<button (click)="changeTasks()">Actualizar tareas</button>
