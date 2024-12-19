@@ -14,9 +14,15 @@ export class AppComponent {
 
   public config:DataTableConfig = {
     dataTable: dataTable,
-    columns: ["id", "name", "email", "phone"],
+    columns: [
+      { name: "id", isLink: true },
+      { name: "name", isLink: false },
+      { name: "email", isLink: true },
+      { name: "phone", isLink: false },
+    ],
     columnsWidth: ["1fr", "1fr", "1fr", "1fr"],
-    isLinkRow: true,
+    isLinkRow: false,
+    isLinkColumn: [true, false, true, false],
   }
   
 }

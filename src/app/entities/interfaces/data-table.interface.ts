@@ -6,9 +6,15 @@ export interface DataTable {
   email: string;
 }
 
+export interface DataTableColumn {
+  name: string;
+  isLink: boolean;
+}
+
 export interface DataTableConfig {
   dataTable: DataTable[];
-  columns: string[];
+  columns: DataTableColumn[];
   columnsWidth: string[];
   isLinkRow: boolean;
+  isLinkColumn: boolean[];
 }
