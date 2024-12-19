@@ -1,21 +1,17 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Business Name</th>
-      <th>Phone</th>
-      <th>Email</th>
+      @for(column of config().columns; track $index) {
+        <th>{{ column }}</th>
+      }
     </tr>
   </thead>
   <tbody>
-    @for(column  of config().dataTable; track column.id) {
+    @for (data of config().dataTable; track data.id) {
       <tr>
-        <td>{{ column.id }}</td>
-        <td>{{ column.name }}</td>
-        <td>{{ column.businessName }}</td>
-        <td>{{ column.phone }}</td>
-        <td>{{ column.email }}</td>
+        @for(column of config().columns; track $index) {
+          <td>{{ getValue(data, column) }}</td>  
+        }
       </tr>
     }
   </tbody>

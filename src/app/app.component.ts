@@ -14,6 +14,7 @@ export class AppComponent {
 
   public config:DataTableConfig = {
     dataTable: dataTable,
+    columns: ["id", "name", "phone", "email"]
   }
   
 }
