@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { dataTable } from '@entities/constants/data-table.constants';
+import { Component, input } from '@angular/core';
 import { DataTableConfig } from '@entities/interfaces/data-table.interface';
 
 @Component({
@@ -10,8 +9,6 @@ import { DataTableConfig } from '@entities/interfaces/data-table.interface';
 })
 export class DataTableComponent {
 
-  public config:DataTableConfig = {
-    dataTable: dataTable,
-  }
+  public config = input.required<DataTableConfig>();
 
 }
