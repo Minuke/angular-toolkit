@@ -15,13 +15,18 @@ export class AppComponent {
   public config: DataTableConfig = {
     dataTable: dataTable,
     columns: [
-      { name: "id", isLink: true, width: "1fr", isEditable: true },
-      { name: "name", isLink: false, width: "1fr", isEditable: true },
+      { name: "id", isLink: true, width: "1fr", isEditable: false },
+      { name: "name", isLink: false, width: "1fr", isEditable: false },
       { name: "email", isLink: true, width: "1fr", isEditable: true },
-      { name: "phone", isLink: false, width: "1fr", isEditable: true },
+      { name: "phone", isLink: false, width: "1fr", isEditable: false },
     ],
     isLinkRow: false,
   };
+
+  handleIconClick(event: { data: any; column: any }): void {
+    console.log('Icon clicked:', event);
+
+  }
   
   
 }

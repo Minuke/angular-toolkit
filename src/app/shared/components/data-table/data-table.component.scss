@@ -49,30 +49,28 @@ table {
 
 .editable-cell {
   padding: 8px;
-  vertical-align: middle; /* Centrado vertical en la celda */
+  vertical-align: middle;
 }
 
 .content-wrapper {
   display: flex;
-  align-items: center; /* Alinea todo el contenido de manera central */
-  justify-content: space-between; /* Distribuye el texto e icono de forma lógica */
+  align-items: center; 
+  justify-content: space-between;
 }
 
 .cell-text {
-  flex: 1; /* Ocupa todo el espacio disponible para garantizar que el texto y el icono no se solapen */
-  font-size: 14px;
-  color: #333;
-  white-space: nowrap; /* Evita saltos de línea innecesarios */
-  overflow: hidden; /* Maneja textos largos */
-  text-overflow: ellipsis; /* Agrega puntos suspensivos a textos largos */
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .icon-wrapper {
-  flex-shrink: 0; /* Evita que el icono cambie de tamaño por el contenido del texto */
+  flex-shrink: 0; 
   display: flex;
-  align-items: center; /* Centra el icono verticalmente */
+  align-items: center; 
   justify-content: center;
-  width: 24px; /* Tamaño fijo para el espacio del icono */
+  width: 24px;
 }
 
 .img-editable {

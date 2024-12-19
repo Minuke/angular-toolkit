@@ -25,7 +25,7 @@
                   <td class="editable-cell">
                     <div class="content-wrapper">
                       <span class="cell-text">{{ getValue(data, column.name) }}</span>
-                      <img (click)="onIconClick(data, column)" class="img-editable" src="editable.svg" alt="editable">
+                      <img (click)="emitIconClick(data, column)" class="img-editable" src="editable.svg" alt="editable">
                     </div>
                   </td>
                 </a>
@@ -40,7 +40,7 @@
                 <td class="editable-cell">
                   <div class="content-wrapper">
                     <span class="cell-text">{{ getValue(data, column.name) }}</span>
-                    <img (click)="onIconClick(data, column)" class="img-editable" src="editable.svg" alt="editable">
+                    <img (click)="emitIconClick(data, column)" class="img-editable" src="editable.svg" alt="editable">
                   </div>
                 </td>
               } @else {

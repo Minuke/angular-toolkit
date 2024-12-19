@@ -1,4 +1,4 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, EventEmitter, input, OnInit, output, Output } from '@angular/core';
 import { DataTable, DataTableConfig } from '@entities/interfaces/data-table.interface';
 
 @Component({
@@ -10,6 +10,7 @@ import { DataTable, DataTableConfig } from '@entities/interfaces/data-table.inte
 export class DataTableComponent implements OnInit {
 
   public config = input.required<DataTableConfig>();
+  public iconClick = output<{ data: any; column: any }>();
 
   ngOnInit(): void {
       console.log(this.config());
@@ -23,7 +24,7 @@ export class DataTableComponent implements OnInit {
     return this.config().columns.map(column => column.width).join(' ');
   }
 
-  public onIconClick(data: any, column: any) {
-    console.log(data, column);
+  public emitIconClick(data: any, column: any) {
+    this.iconClick.emit({ data, column });
   }
 }
