@@ -1,6 +1,6 @@
 <table>
   <thead>
-    <tr>
+    <tr [style.grid-template-columns]="calculateColumnSize()">
       @for(column of config().columns; track $index) {
         <th>{{ column }}</th>
       }
@@ -8,7 +8,7 @@
   </thead>
   <tbody>
     @for (data of config().dataTable; track data.id) {
-      <tr>
+      <tr [style.grid-template-columns]="calculateColumnSize()">
         @for(column of config().columns; track $index) {
           <td>{{ getValue(data, column) }}</td>  
         }

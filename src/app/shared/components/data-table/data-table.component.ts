@@ -18,4 +18,8 @@ export class DataTableComponent implements OnInit {
   public getValue(data: DataTable, column: string): string | number {
     return data[column as keyof DataTable] ?? '';
   }
+
+  public calculateColumnSize(): string {
+   return this.config().columnsWidth.join(' ');
+  }
 }
