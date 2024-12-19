@@ -20,11 +20,32 @@
         <tr [style.grid-template-columns]="calculateColumnSize()">
           @for(column of config().columns; track $index) {
             @if(column.isLink) {
-              <a href="##">
-                <td>{{ getValue(data, column.name) }}</td>  
-              </a>
+              @if(column.isEditable) {
+                <a href="##">
+                  <td class="editable-cell">
+                    <div class="content-wrapper">
+                      <span class="cell-text">{{ getValue(data, column.name) }}</span>
+                      <img (click)="onIconClick(data, column)" class="img-editable" src="editable.svg" alt="editable">
+                    </div>
+                  </td>
+                </a>
+              } @else {
+                <a href="##">
+                  <td>{{ getValue(data, column.name) }}</td>  
+                </a>
+                }
+
             } @else {
-              <td>{{ getValue(data, column.name) }}</td>  
+              @if(column.isEditable) {
+                <td class="editable-cell">
+                  <div class="content-wrapper">
+                    <span class="cell-text">{{ getValue(data, column.name) }}</span>
+                    <img (click)="onIconClick(data, column)" class="img-editable" src="editable.svg" alt="editable">
+                  </div>
+                </td>
+              } @else {
+                <td>{{ getValue(data, column.name) }}</td>  
+              } 
             }
           }
         </tr>

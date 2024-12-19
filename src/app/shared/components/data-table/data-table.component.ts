@@ -22,4 +22,8 @@ export class DataTableComponent implements OnInit {
   public calculateColumnSize(): string {
     return this.config().columns.map(column => column.width).join(' ');
   }
+
+  public onIconClick(data: any, column: any) {
+    console.log(data, column);
+  }
 }

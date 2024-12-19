@@ -15,10 +15,10 @@ export class AppComponent {
   public config: DataTableConfig = {
     dataTable: dataTable,
     columns: [
-      { name: "id", isLink: true, width: "1fr" },
-      { name: "name", isLink: false, width: "1fr" },
-      { name: "email", isLink: true, width: "1fr" },
-      { name: "phone", isLink: false, width: "1fr" },
+      { name: "id", isLink: true, width: "1fr", isEditable: true },
+      { name: "name", isLink: false, width: "1fr", isEditable: true },
+      { name: "email", isLink: true, width: "1fr", isEditable: true },
+      { name: "phone", isLink: false, width: "1fr", isEditable: true },
     ],
     isLinkRow: false,
   };

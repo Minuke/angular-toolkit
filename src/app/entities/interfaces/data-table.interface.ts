@@ -9,7 +9,8 @@ export interface DataTable {
 export interface DataTableColumn {
   name: string;
   isLink: boolean;
-  width: string
+  width: string,
+  isEditable: boolean;
 }
 
 export interface DataTableConfig {
