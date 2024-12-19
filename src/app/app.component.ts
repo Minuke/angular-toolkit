@@ -16,6 +16,7 @@ export class AppComponent {
     dataTable: dataTable,
     columns: ["id", "name", "email", "phone"],
     columnsWidth: ["1fr", "1fr", "1fr", "1fr"],
+    isLinkRow: true,
   }
   
 }

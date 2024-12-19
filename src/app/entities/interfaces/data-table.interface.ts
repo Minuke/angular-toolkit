@@ -10,4 +10,5 @@ export interface DataTableConfig {
   dataTable: DataTable[];
   columns: string[];
   columnsWidth: string[];
+  isLinkRow: boolean;
 }

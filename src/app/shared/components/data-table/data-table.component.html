@@ -8,11 +8,21 @@
   </thead>
   <tbody>
     @for (data of config().dataTable; track data.id) {
-      <tr [style.grid-template-columns]="calculateColumnSize()">
-        @for(column of config().columns; track $index) {
-          <td>{{ getValue(data, column) }}</td>  
-        }
-      </tr>
+      @if(config().isLinkRow) {
+        <a href="">
+          <tr [style.grid-template-columns]="calculateColumnSize()">
+              @for(column of config().columns; track $index) {
+                <td>{{ getValue(data, column) }}</td> 
+              }
+          </tr>
+        </a>
+      } @else {
+        <tr [style.grid-template-columns]="calculateColumnSize()">
+          @for(column of config().columns; track $index) {
+            <td>{{ getValue(data, column) }}</td>  
+          }
+        </tr>
+      }
     }
   </tbody>
 </table>
