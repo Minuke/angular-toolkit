@@ -7,5 +7,5 @@ export interface DataTable {
 }
 
 export interface DataTableConfig {
-  tableData: DataTable[];
+  dataTable: DataTable[];
 }

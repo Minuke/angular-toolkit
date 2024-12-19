@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { tableData } from '@entities/constants/data-table.constants';
+import { dataTable } from '@entities/constants/data-table.constants';
 import { DataTableConfig } from '@entities/interfaces/data-table.interface';
 
 @Component({
@@ -11,7 +11,7 @@ import { DataTableConfig } from '@entities/interfaces/data-table.interface';
 export class DataTableComponent {
 
   public config:DataTableConfig = {
-    tableData: tableData,
+    dataTable: dataTable,
   }
-  
+
 }

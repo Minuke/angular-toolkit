@@ -1,6 +1,6 @@
 import { DataTable } from "@entities/interfaces/data-table.interface";
 
-export const tableData: DataTable[] = [
+export const dataTable: DataTable[] = [
   { id: 1, name: 'Juan Pérez', businessName: 'Pérez & Asociados', phone: '555-1234', email: 'juan.perez@example.com' },
   { id: 2, name: 'María Gómez', businessName: 'Gómez Industrias', phone: '555-5678', email: 'maria.gomez@example.com' },
   { id: 3, name: 'Carlos Sánchez', businessName: 'Sánchez y Cía.', phone: '555-9101', email: 'carlos.sanchez@example.com' },
