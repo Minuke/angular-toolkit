@@ -12,17 +12,16 @@ import { DataTableComponent } from '@shared/components/data-table/data-table.com
 })
 export class AppComponent {
 
-  public config:DataTableConfig = {
+  public config: DataTableConfig = {
     dataTable: dataTable,
     columns: [
-      { name: "id", isLink: true },
-      { name: "name", isLink: false },
-      { name: "email", isLink: true },
-      { name: "phone", isLink: false },
+      { name: "id", isLink: true, width: "1fr" },
+      { name: "name", isLink: false, width: "1fr" },
+      { name: "email", isLink: true, width: "1fr" },
+      { name: "phone", isLink: false, width: "1fr" },
     ],
-    columnsWidth: ["1fr", "1fr", "1fr", "1fr"],
     isLinkRow: false,
-    isLinkColumn: [true, false, true, false],
-  }
+  };
+  
   
 }

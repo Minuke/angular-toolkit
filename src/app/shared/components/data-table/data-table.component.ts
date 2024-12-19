@@ -20,6 +20,6 @@ export class DataTableComponent implements OnInit {
   }
 
   public calculateColumnSize(): string {
-   return this.config().columnsWidth.join(' ');
+    return this.config().columns.map(column => column.width).join(' ');
   }
 }

@@ -9,12 +9,11 @@ export interface DataTable {
 export interface DataTableColumn {
   name: string;
   isLink: boolean;
+  width: string
 }
 
 export interface DataTableConfig {
   dataTable: DataTable[];
   columns: DataTableColumn[];
-  columnsWidth: string[];
   isLinkRow: boolean;
-  isLinkColumn: boolean[];
 }
