@@ -1,0 +1,17 @@
+<h2 class="table-title">{{ tableConfig().title }}</h2>
+<table>
+  <thead>
+    <tr [ngStyle]="{ 'grid-template-columns': gridTemplateColumns() }">
+      <th *ngFor="let column of tableConfig().columns">
+        {{ column["header"] }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr [ngStyle]="{ 'grid-template-columns': gridTemplateColumns() }" [class.linkable]="tableConfig().rowLinkable" (click)="onRowClick(row)" *ngFor="let row of tableConfig().data">
+      <td  [class.linkable]="column['linkable']" (click)="onCellClick(row, column['field'], column['linkable'])" *ngFor="let column of tableConfig().columns">
+        {{ row[column["field"]] }}
+      </td>
+    </tr> 
+  </tbody>
+</table>

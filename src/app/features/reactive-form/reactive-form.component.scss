@@ -1,0 +1,116 @@
+@use "styles" as *;
+
+.reactive-form-wrapper {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.24px;
+  }
+}
+
+form {
+  flex: 1;
+  max-width: 600px;
+  padding: 32px;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-size: 16px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #334155;
+    background-color: #ffffff;
+    transition: border 0.3s;
+
+    &:focus {
+      border-color: #475569;
+      outline: none;
+    }
+  }
+
+  div {
+    margin-bottom: 1rem;
+
+    &.error {
+      font-size: 12px;
+      color: #ef4444;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1e293b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #334155;
+    }
+
+    &:disabled {
+      background-color: #94a3b8;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.skeleton {
+  flex: 1;
+  max-width: 600px;
+  padding: 32px;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #475569;
+  overflow: auto;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  pre {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
