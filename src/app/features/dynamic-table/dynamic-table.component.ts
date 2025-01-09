@@ -13,13 +13,7 @@ export class DynamicTableComponent<T extends Record<string, any>> {
 
   public tableConfig = input.required<TableConfig<T>>();
   public rowClick = output<T>();
-  public cellClick = output<{ 
-    row: T; 
-    cell: { 
-        field: keyof T;          // La clave de la celda
-        value: T[keyof T];       // El valor de la celda basado en la clave
-    } 
-}>();
+  public cellClick = output<{ row: T; cell: { field: string; value: T } }>();
 
 
     /**
@@ -30,7 +24,7 @@ export class DynamicTableComponent<T extends Record<string, any>> {
       this.tableConfig().columns.map(col => col["width"]).join(' ')
     );
 
-     /**
+    /**
    * Handles the click event on a table row.
    * If the table configuration allows row linking, it emits the clicked row data.
    *

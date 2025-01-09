@@ -1,4 +1,12 @@
 <div class="wrapper-dynamic-table">
-  <app-dynamic-table [tableConfig]="personTableConfig()"></app-dynamic-table>
-  <app-dynamic-table [tableConfig]="productTableConfig()"></app-dynamic-table> 
+  <app-dynamic-table 
+    [tableConfig]="personTableConfig()" 
+    (rowClick)="onPersonRowClick($event)" 
+    (cellClick)="onPersonCellClick($event)">
+  </app-dynamic-table>
+  <app-dynamic-table 
+    [tableConfig]="productTableConfig()" 
+    (rowClick)="onProductRowClick($event)" 
+    (cellClick)="onProductCellClick($event)">
+  </app-dynamic-table> 
 </div>
