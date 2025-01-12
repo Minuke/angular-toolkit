@@ -5,10 +5,10 @@
       <th *ngFor="let column of tableConfig().columns">
         <span (click)="column.sortable ? onSort(column) : null">
           {{ column.header }}
-          <span [ngClass]="{ 'sorted-asc': column.sortDirection === 'asc', 'sorted-desc': column.sortDirection === 'desc' }">
+          <span *ngIf="column.sortable" [ngClass]="{ 'sorted-asc': column.sortDirection === 'asc', 'sorted-desc': column.sortDirection === 'desc' }">
             ▲
           </span>
-          <span [ngClass]="{ 'sorted-asc': column.sortDirection === 'desc', 'sorted-desc': column.sortDirection === 'asc' }">
+          <span *ngIf="column.sortable" [ngClass]="{ 'sorted-asc': column.sortDirection === 'desc', 'sorted-desc': column.sortDirection === 'asc' }">
             ▼
           </span>
         </span>
