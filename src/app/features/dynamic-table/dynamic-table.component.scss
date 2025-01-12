@@ -105,3 +105,22 @@ tr.linkable:hover {
 td.linkable {
   cursor: pointer;
 }
+
+span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  span {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .sorted-asc {
+    opacity: 0.5;
+  }
+
+  .sorted-desc {
+    opacity: 0.5;
+  }
+}

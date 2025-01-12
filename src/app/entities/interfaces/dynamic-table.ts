@@ -3,6 +3,8 @@ export interface TableColumn {
   header: string;
   width: string;
   linkable: boolean;
+  sortable?: boolean;
+  sortDirection?: 'asc' | 'desc' | 'none';
 }
 
 export interface TableConfig<T> {

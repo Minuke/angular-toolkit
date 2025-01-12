@@ -3,13 +3,26 @@
   <thead>
     <tr [ngStyle]="{ 'grid-template-columns': gridTemplateColumns() }">
       <th *ngFor="let column of tableConfig().columns">
-        {{ column["header"] }}
+        <span (click)="column.sortable ? onSort(column) : null">
+          {{ column.header }}
+          <span [ngClass]="{ 'sorted-asc': column.sortDirection === 'asc', 'sorted-desc': column.sortDirection === 'desc' }">
+            ▲
+          </span>
+          <span [ngClass]="{ 'sorted-asc': column.sortDirection === 'desc', 'sorted-desc': column.sortDirection === 'asc' }">
+            ▼
+          </span>
+        </span>
       </th>
     </tr>
   </thead>
   <tbody>
-    <tr [ngStyle]="{ 'grid-template-columns': gridTemplateColumns() }" [class.linkable]="tableConfig().rowLinkable" (click)="onRowClick(row)" *ngFor="let row of tableConfig().data">
-      <td  [class.linkable]="column['linkable']" (click)="onCellClick(row, column['field'], column['linkable'])" *ngFor="let column of tableConfig().columns">
+    <tr *ngFor="let row of sortedData()"
+        [ngStyle]="{ 'grid-template-columns': gridTemplateColumns() }"
+        [class.linkable]="tableConfig().rowLinkable"
+        (click)="onRowClick(row)">
+      <td *ngFor="let column of tableConfig().columns" 
+          [class.linkable]="column['linkable']"
+          (click)="onCellClick(row, column['field'], column['linkable'])">
         {{ row[column["field"]] }}
       </td>
     </tr> 

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, input, output } from '@angular/core';
-import { TableConfig } from '@entities/interfaces/dynamic-table';
+import { Component, computed, input, output, signal } from '@angular/core';
+import { TableColumn, TableConfig } from '@entities/interfaces/dynamic-table';
 
 
 @Component({
@@ -14,6 +14,37 @@ export class DynamicTableComponent<T extends Record<string, any>> {
   public tableConfig = input.required<TableConfig<T>>();
   public rowClick = output<T>();
   public cellClick = output<{ row: T; cell: { field: string; value: T } }>();
+
+  public sortedData = signal<T[]>([]);
+
+  ngOnInit() {
+    // Inicializar con los datos originales
+    this.sortedData.set(this.tableConfig().data);
+  }
+
+  public onSort(column: TableColumn): void {
+    const currentDirection = column.sortDirection || 'none';
+    const nextDirection = currentDirection === 'none' ? 'asc' 
+                        : currentDirection === 'asc' ? 'desc' 
+                        : 'none';
+  
+    column.sortDirection = nextDirection;
+  
+    let dataToSort = [...this.tableConfig().data];
+    
+    if (nextDirection !== 'none') {
+      dataToSort.sort((a, b) => {
+        const aValue = a[column.field];
+        const bValue = b[column.field];
+        return nextDirection === 'asc'
+          ? aValue > bValue ? 1 : -1
+          : aValue < bValue ? 1 : -1;
+      });
+    }
+  
+    // Actualizar el `WritableSignal` local
+    this.sortedData.set(dataToSort);
+  }
 
 
     /**

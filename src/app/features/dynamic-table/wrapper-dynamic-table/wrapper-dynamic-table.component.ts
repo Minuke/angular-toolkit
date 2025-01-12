@@ -47,10 +47,10 @@ export class WrapperDynamicTableComponent {
     data: productDataList,
     columns: [
       { field: "id", header: "ID", width: "1fr", linkable: false },
-      { field: "name", header: "Name", width: "1fr", linkable: false },
+      { field: "name", header: "Name", width: "1fr", linkable: false, sortable: true },
       { field: "category", header: "Category", width: "1fr",linkable: false },
       { field: "price", header: "Price", width: "1fr", linkable: false },
-      { field: "stock", header: "Stock", width: "1fr", linkable: false },
+      { field: "stock", header: "Stock", width: "1fr", linkable: false, sortable: true },
     ],
     rowLinkable: true
   });
