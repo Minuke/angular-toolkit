@@ -9,32 +9,27 @@
     </tr>
   </thead>
   <tbody>
-    @for(user of paginatedUsers; track $index) {
-      <tr>
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.phone }}</td>
-        <td>{{ user.city }}</td>
-      </tr>
-    }
+    <tr *ngFor="let user of pagination.paginatedData;">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.city }}</td>
+    </tr>
   </tbody>
 </table>
 
-<div class="pagination" [ngClass]="{'hidden': isDataEmpty}">
-  <button (click)="goToFirstPage()" [disabled]="!paginationService.hasPreviousPage()">
+<div class="pagination" [ngClass]="{'hidden': pagination.isDataEmpty}">
+  <button (click)="goToFirstPage()" [disabled]="!paginationService.hasPreviousPage(pagination)">
       <i class="fas fa-angle-double-left"></i> First
   </button>
-  <button (click)="prevPage()" [disabled]="!paginationService.hasPreviousPage()">
+  <button (click)="prevPage()" [disabled]="!paginationService.hasPreviousPage(pagination)">
       <i class="fas fa-angle-left"></i> Previous
   </button>
-  
-  <span class="page-info">Page {{ paginationService.getPage() }} of {{ paginationService.getTotalPages(data.length) }}</span>
-  
-  <button (click)="nextPage()" [disabled]="!paginationService.hasNextPage(data.length)">
+  <span class="page-info">Page {{ pagination.currentPage }} of {{ paginationService.getTotalPages(data.length, pagination) }}</span>
+  <button (click)="nextPage()" [disabled]="!paginationService.hasNextPage(data.length, pagination)">
       Next <i class="fas fa-angle-right"></i>
   </button>
-  <button (click)="goToLastPage()" [disabled]="!paginationService.hasNextPage(data.length)">
+  <button (click)="goToLastPage()" [disabled]="!paginationService.hasNextPage(data.length, pagination)">
       Last <i class="fas fa-angle-double-right"></i>
   </button>
 </div>
-

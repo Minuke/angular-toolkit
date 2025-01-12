@@ -3,12 +3,13 @@ import { userDataList } from '@entities/constants/user.constants';
 import { UserData } from '@entities/interfaces/user.interface';
 import { PaginationService } from './services/pagination.service';
 import { CommonModule } from '@angular/common';
+import { Pagination } from '@entities/interfaces/pagination.interface';
 
 @Component({
   selector: 'app-table',
   imports: [CommonModule],
   templateUrl: './table.component.html',
-  styleUrl: './table.component.scss'
+  styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
 
@@ -16,32 +17,43 @@ export class TableComponent {
 
   public data: UserData[] = userDataList;
 
-  get paginatedUsers() {
-    return this.paginationService.getPaginatedData(this.data);
+  public pagination: Pagination<UserData> = {
+    currentPage: 1,
+    itemsPerPage: 10,
+    isDataEmpty: this.data.length === 0,
+    paginatedData: []
+  };
+
+  public ngOnInit(): void {
+    this.updatePaginatedUsers();
   }
 
-  get isDataEmpty(): boolean {
-    return this.data.length === 0;
+  public updatePaginatedUsers(): void {
+    this.pagination.paginatedData = this.paginationService.getPaginatedData(this.data, this.pagination);
   }
 
-  nextPage() {
-    if (this.paginationService.hasNextPage(this.data.length)) {
-      this.paginationService.setPage(this.paginationService.getPage() + 1);
+  public nextPage(): void {
+    if (this.paginationService.hasNextPage(this.data.length, this.pagination)) {
+      this.pagination.currentPage += 1;
+      this.updatePaginatedUsers();
     }
   }
 
-  prevPage() {
-    if (this.paginationService.hasPreviousPage()) {
-      this.paginationService.setPage(this.paginationService.getPage() - 1);
+  public prevPage(): void {
+    if (this.paginationService.hasPreviousPage(this.pagination)) {
+      this.pagination.currentPage -= 1;
+      this.updatePaginatedUsers();
     }
   }
 
-  goToFirstPage(): void {
-    this.paginationService.goToPage(1);
+  public goToFirstPage(): void {
+    this.pagination.currentPage = 1;
+    this.updatePaginatedUsers();
   }
 
-  goToLastPage(): void {
-    this.paginationService.goToPage(this.paginationService.getTotalPages(this.data.length));
+  public goToLastPage(): void {
+    this.pagination.currentPage = this.paginationService.getTotalPages(this.data.length, this.pagination);
+    this.updatePaginatedUsers();
   }
 
 }

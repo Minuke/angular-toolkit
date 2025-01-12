@@ -5,50 +5,21 @@ import { Injectable } from '@angular/core';
 })
 export class PaginationService {
 
-  private currentPage = 1;
-  private itemsPerPage = 3;
-
-  
-
-  setPage(page: number): void {
-    if (page > 0) {
-      this.currentPage = page;
-    }
+  public getPaginatedData<T>(data: T[], pagination: { currentPage: number; itemsPerPage: number }): T[] {
+    const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
+    return data.slice(startIndex, startIndex + pagination.itemsPerPage);
   }
 
-  getPage(): number {
-    return this.currentPage;
+  public getTotalPages(dataLength: number, pagination: { itemsPerPage: number }): number {
+    return Math.ceil(dataLength / pagination.itemsPerPage);
   }
 
-  setItemsPerPage(count: number): void {
-    if (count > 0) {
-      this.itemsPerPage = count;
-    }
+  public hasNextPage(dataLength: number, pagination: { currentPage: number; itemsPerPage: number }): boolean {
+    return pagination.currentPage < this.getTotalPages(dataLength, pagination);
   }
 
-  getItemsPerPage(): number {
-    return this.itemsPerPage;
+  public hasPreviousPage(pagination: { currentPage: number }): boolean {
+    return pagination.currentPage > 1;
   }
 
-  getPaginatedData<T>(data: T[]): T[] {
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    return data.slice(startIndex, startIndex + this.itemsPerPage);
-  }
-
-  getTotalPages(dataLength: number): number {
-    return Math.ceil(dataLength / this.itemsPerPage);
-  }
-
-  goToPage(page: number): void {
-    this.currentPage = page;
-  }
-
-
-  hasNextPage(dataLength: number): boolean {
-    return this.currentPage < this.getTotalPages(dataLength);
-  }
-
-  hasPreviousPage(): boolean {
-    return this.currentPage > 1;
-  }
 }
