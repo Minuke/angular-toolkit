@@ -1,0 +1,30 @@
+.login {
+	display: grid;
+	grid-template-areas:
+    "login__title"
+    "login__form";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+
+  &__title {
+    grid-area: login__title;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form {
+    grid-area: login__form;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form-element {
+    display: grid;
+    grid-template-areas:
+      "username-label"
+      "password-input"
+      "submit-button";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}

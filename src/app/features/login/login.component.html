@@ -1,0 +1,28 @@
+<div class="login">
+    <div class="login__title">
+        <h1 class="login__heading">Login</h1>
+    </div>
+    <div class="login__form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login__form-element">
+            <div class="login__form-group">
+                <label for="username" class="login__label">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" placeholder="Nombre de usuario" autocomplete="username" formControlName="username" class="login__input">
+                @if(loginForm.controls['username'].invalid && loginForm.controls['username'].touched){
+                    <div class="error">
+                        {{ getErrorMessage('username') }}
+                    </div>
+                }
+            </div>
+            <div class="login__form-group">
+                <label for="password" class="login__label">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Contraseña" autocomplete="current-password" formControlName="password" class="login__input">
+                @if(loginForm.controls['password'].invalid && loginForm.controls['password'].touched){
+                    <div class="error">
+                        {{ getErrorMessage('password') }}
+                    </div>
+                }
+            </div>
+            <button type="submit" class="login__button">Submit</button>
+        </form>
+    </div>
+</div>

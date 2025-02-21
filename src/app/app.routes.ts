@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { WrapperButtonComponent } from '@features/button/wrapper-button/wrapper-button.component';
 import { WrapperDynamicTableComponent } from '@features/dynamic-table/wrapper-dynamic-table/wrapper-dynamic-table.component';
+import { LoginComponent } from '@features/login/login.component';
 import { ReactiveFormComponent } from '@features/reactive-form/reactive-form.component';
 import { TableComponent } from '@features/table/table.component';
 import { HomeComponent } from '@shared/components/home/home.component';
@@ -35,5 +36,10 @@ export const routes: Routes = [
     path: "dynamic-table",
     component: WrapperDynamicTableComponent,
     title: "Dynamic Table",
+  },
+  {
+    path: "login",
+    component: LoginComponent,
+    title: "Login",
   },
 ];
