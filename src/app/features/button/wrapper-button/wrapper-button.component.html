@@ -1,0 +1,50 @@
+<div class="button-wrapper">
+  <h1>Dynamic Button Showcase</h1>
+  <div class="buttons-container">
+    <app-dynamic-button
+      [label]="'Guardar'"
+      [class]="'success-button'"
+      [size]="'size-medium'"
+      [hasIcon]="true"
+      [icon]="'move'"
+      [iconPosition]="'left'"
+      [iconWidth]="'16px'"
+      [border]="'border-solid-3'"
+      [borderRadius]="'border-radius-5'"
+      [fixedWidth]="false"
+      [disabled]="false"
+      [type]="'submit'"
+      (onClick)="onClick('Guardar')"
+    ></app-dynamic-button>
+    <app-dynamic-button
+    [label]="'Eliminar'"
+    [class]="'danger-button'"
+    [size]="'size-large'"
+    [hasIcon]="true"
+    [icon]="'move'"
+    [iconPosition]="'right'"
+    [iconWidth]="'20px'"
+    [border]="'border-solid-3'"
+    [borderRadius]="'border-radius-10'"
+    [fixedWidth]="true"
+    [disabled]="false"
+    [type]="'button'"
+    (onClick)="onClick('Eliminar')"
+  ></app-dynamic-button>
+  <app-dynamic-button
+  [label]="'Cancelar'"
+  [class]="'secondary-button'"
+  [size]="'small-medium'"
+  [hasIcon]="false"
+  [icon]="''"
+  [iconPosition]="'left'"
+  [iconWidth]="''"
+  [border]="'border-dashed-3'"
+  [borderRadius]="'border-dashed-15'"
+  [fixedWidth]="false"
+  [disabled]="true"
+  [type]="'submit'"
+  (onClick)="onClick('Cancelar')"
+></app-dynamic-button>
+  </div>
+</div>

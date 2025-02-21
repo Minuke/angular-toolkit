@@ -1,0 +1,14 @@
+@forward "./functions.scss";
+@forward "./mixins.scss";
+@forward "./reset.scss";
+@forward "./typography.scss";
+@forward "./utilities.scss";
+@forward "./variables.scss";
+
+html, body {
+  width: 100vw; 
+  height: 100vh; 
+  overflow: hidden; 
+  background-color: #e2e8f0;
+  font-family: 'Poppins', sans-serif;
+}

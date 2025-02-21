@@ -1,0 +1,10 @@
+<button class="button" [type]="type()" [ngClass]="[class(), border(), borderRadius(), size(),
+    fixedWidth() ? 'fixed-' + size() : '']" [disabled]="disabled()" (click)="onClick.emit()">
+  @if(hasIcon() && iconPosition() === 'left') {
+    <img [ngStyle]="{ width: iconWidth() }" src="{{ icon() }}.svg" alt="{{ icon() }}">
+  }
+  <p [ngClass]="labelClass()">{{ label() }}</p>
+  @if(hasIcon() && iconPosition() === 'right') {
+    <img [ngStyle]="{ width: iconWidth() }" src="{{ icon() }}.svg" alt="{{ icon() }}">
+  }
+</button>

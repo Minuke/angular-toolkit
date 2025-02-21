@@ -1,0 +1,30 @@
+<h2 class="table-title">{{ tableConfig().title }}</h2>
+<table>
+  <thead>
+    <tr [ngStyle]="{ 'grid-template-columns': gridTemplateColumns() }">
+      <th *ngFor="let column of tableConfig().columns">
+        <span (click)="column.sortable ? onSort(column) : null">
+          {{ column.header }}
+          <span *ngIf="column.sortable" [ngStyle]="{ 'opacity': column.sortDirection === 'asc' ? '1' : '0.5' }">
+            ▲
+          </span>
+          <span *ngIf="column.sortable" [ngStyle]="{ 'opacity': column.sortDirection === 'desc' ? '1' : '0.5' }">
+            ▼
+          </span>
+        </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of sortedData()"
+        [ngStyle]="{ 'grid-template-columns': gridTemplateColumns() }"
+        [class.linkable]="tableConfig().rowLinkable"
+        (click)="onRowClick(row)">
+      <td *ngFor="let column of tableConfig().columns" 
+          [class.linkable]="column['linkable']"
+          (click)="onCellClick(row, column['field'], column['linkable'])">
+        {{ row[column["field"]] }}
+      </td>
+    </tr> 
+  </tbody>
+</table>

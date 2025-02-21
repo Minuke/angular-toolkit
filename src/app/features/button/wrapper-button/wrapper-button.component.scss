@@ -1,0 +1,24 @@
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  gap: 32px;
+  padding: 0 32px 32px;
+
+  h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+    text-align: center; 
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 24px; 
+    width: 100%;
+    max-width: 400px;
+  }
+}
