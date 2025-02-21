@@ -5,8 +5,8 @@
     <div class="login__form">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login__form-element">
             <div class="login__form-group">
-                <label for="username" class="login__label">Nombre de usuario o correo electrónico:</label>
-                <input type="text" id="username" name="username" placeholder="Nombre de usuario o correo electrónico" autocomplete="username email" formControlName="userIdentifier" class="login__input">
+                <label for="username" class="login__label">Usuario/Email:</label>
+                <input type="text" id="username" name="username" placeholder="Usuario o Email" autocomplete="username email" formControlName="userIdentifier" class="login__input">
                 @if(loginForm.controls['userIdentifier'].invalid && loginForm.controls['userIdentifier'].touched){
                     <div class="error">
                         {{ getErrorMessage('userIdentifier') }}
