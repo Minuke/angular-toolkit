@@ -3,6 +3,7 @@ import { WrapperButtonComponent } from '@features/button/wrapper-button/wrapper-
 import { WrapperDynamicTableComponent } from '@features/dynamic-table/wrapper-dynamic-table/wrapper-dynamic-table.component';
 import { LoginComponent } from '@features/login/login.component';
 import { ReactiveFormComponent } from '@features/reactive-form/reactive-form.component';
+import { RegisterComponent } from '@features/register/register.component';
 import { TableComponent } from '@features/table/table.component';
 import { HomeComponent } from '@shared/components/home/home.component';
 
@@ -41,5 +42,10 @@ export const routes: Routes = [
     path: "login",
     component: LoginComponent,
     title: "Login",
+  },
+  {
+    path: "register",
+    component: RegisterComponent,
+    title: "Register",
   },
 ];
