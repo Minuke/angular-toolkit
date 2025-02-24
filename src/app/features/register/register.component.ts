@@ -16,6 +16,8 @@ export class RegisterComponent {
     public registerForm = this.formBuilder.group({
         username: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
+        firstPassword: ['', Validators.required],
+        secondPassword: ['', Validators.required],
     });
 
     public getErrorMessage(controlName: string): string | null { 

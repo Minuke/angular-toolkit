@@ -45,6 +45,8 @@
     grid-template-areas:
       "user"
       "email"
+      "first-password"
+      "second-password"
       "actions";
   }
 
@@ -57,6 +59,12 @@
     }
     &--email {
       grid-area: email;
+    }
+    &--first-password {
+      grid-area: first-password;
+    }
+    &--second-password {
+      grid-area: second-password;
     }
   }
 

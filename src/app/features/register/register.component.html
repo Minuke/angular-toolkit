@@ -34,6 +34,36 @@
           {{ getErrorMessage('email') }}
           </div>
       </div>
+      <div class="register__field register__field--first-pasword">
+        <label for="firstPassword" class="register__label">Password:</label>
+        <input
+        type="password"
+        id="firstPassword"
+        name="firstPassword"
+        placeholder="Password"
+        autocomplete="new-password"
+        formControlName="firstPassword"
+        class="register__input"
+        />
+        <div *ngIf="registerForm.controls['firstPassword'].invalid && registerForm.controls['firstPassword'].touched" class="register__error">
+          {{ getErrorMessage('firstPassword') }}
+          </div>
+      </div>
+      <div class="register__field register__field--second-password">
+        <label for="username" class="register__label">Confirm Password:</label>
+        <input
+        type="password"
+        id="secondPassword"
+        name="secondPassword"
+        placeholder="Confirm Password"
+        autocomplete="new-password"
+        formControlName="secondPassword"
+        class="register__input"
+        />
+        <div *ngIf="registerForm.controls['secondPassword'].invalid && registerForm.controls['secondPassword'].touched" class="register__error">
+          {{ getErrorMessage('secondPassword') }}
+          </div>
+      </div>
       <div class="register__actions">
         <button type="submit" class="register__button" [disabled]="registerForm.invalid">Submit</button>
     </div>
