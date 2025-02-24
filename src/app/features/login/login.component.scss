@@ -14,7 +14,18 @@
   }
 
   &__heading {
-    /* Estilos adicionales para el heading si se requieren */
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: pulse 1.5s infinite alternate;
   }
 
   &__form {
