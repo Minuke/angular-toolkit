@@ -3,26 +3,40 @@
         <h1 class="login__heading">Login</h1>
     </div>
     <div class="login__form">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login__form-element">
-            <div class="login__form-group">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login__form-content">
+            <div class="login__field login__field--user">
                 <label for="username" class="login__label">Usuario/Email:</label>
-                <input type="text" id="username" name="username" placeholder="Usuario o Email" autocomplete="username email" formControlName="userIdentifier" class="login__input">
-                @if(loginForm.controls['userIdentifier'].invalid && loginForm.controls['userIdentifier'].touched){
-                    <div class="error">
-                        {{ getErrorMessage('userIdentifier') }}
-                    </div>
-                }
+                <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Usuario o Email"
+                autocomplete="username email"
+                formControlName="userIdentifier"
+                class="login__input"
+                />
+                <div *ngIf="loginForm.controls['userIdentifier'].invalid && loginForm.controls['userIdentifier'].touched" class="login__error">
+                {{ getErrorMessage('userIdentifier') }}
+                </div>
             </div>
-            <div class="login__form-group">
+            <div class="login__field login__field--password">
                 <label for="password" class="login__label">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Contraseña" autocomplete="current-password" formControlName="password" class="login__input">
-                @if(loginForm.controls['password'].invalid && loginForm.controls['password'].touched){
-                    <div class="error">
-                        {{ getErrorMessage('password') }}
-                    </div>
-                }
+                <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Contraseña"
+                autocomplete="current-password"
+                formControlName="password"
+                class="login__input"
+                />
+                <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="login__error">
+                {{ getErrorMessage('password') }}
+                </div>
             </div>
-            <button type="submit" class="login__button">Submit</button>
+            <div class="login__actions">
+                <button type="submit" class="login__button" [disabled]="loginForm.invalid">Submit</button>
+            </div>
         </form>
     </div>
 </div>

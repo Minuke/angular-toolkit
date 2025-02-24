@@ -1,35 +1,96 @@
 .login {
-	display: grid;
-	grid-template-areas:
-    "login__title"
-    "login__form";
+  display: grid;
+  grid-template-areas:
+    "title"
+    "form";
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
+  row-gap: 1rem;
 
-  &__form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
   &__title {
-    grid-area: login__title;
+    grid-area: title;
     display: flex;
     justify-content: center;
+  }
+
+  &__heading {
+    /* Estilos adicionales para el heading si se requieren */
   }
 
   &__form {
-    grid-area: login__form;
+    grid-area: form;
     display: flex;
     justify-content: center;
   }
 
-  &__form-element {
+  &__form-content {
     display: grid;
-    grid-template-areas:
-      "username-label"
-      "password-input"
-      "submit-button";
+    width: 100%;
+    max-width: 400px;
+    row-gap: 1rem;
+    /* Configuración para dos columnas */
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "user"
+      "password"
+      "actions";
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    &--user {
+      grid-area: user;
+    }
+
+    &--password {
+      grid-area: password;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  &__error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  &__actions {
+    grid-area: actions;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+    &:disabled {
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
   }
 }
