@@ -50,7 +50,7 @@
           <img [src]="showFirstPassword ? 'eye-open.svg' : 'eye-closed.svg'" alt="ddd" class="password-toggle__icon">
         </button>
       </div>
-        <div *ngIf="registerForm.controls['firstPassword'].invalid && registerForm.controls['firstPassword'].touched && registerForm.controls['secondPassword'].touched" class="register__error">
+        <div *ngIf="registerForm.controls['firstPassword'].invalid && registerForm.controls['firstPassword'].touched && registerForm.controls['firstPassword'].touched" class="register__error">
           {{ getErrorMessage('firstPassword') }}
         </div>
       </div>
@@ -71,13 +71,13 @@
        </button>
       </div>
       
-        <div *ngIf="registerForm.controls['secondPassword'].invalid && registerForm.controls['secondPassword'].touched && registerForm.controls['secondPassword'].dirty"  class="register__error">
-          {{ getErrorMessage('secondPassword') }}
-        </div>
+      <div *ngIf="registerForm.controls['secondPassword'].invalid && registerForm.controls['secondPassword'].touched && registerForm.controls['secondPassword'].touched" class="register__error">
+        {{ getErrorMessage('secondPassword') }}
+      </div>
       </div>
       
       <div class="register__actions">
-        <button type="submit" class="register__button" [disabled]="registerForm.invalid">Submit</button>
+        <button type="submit" class="register__button">Submit</button>
       </div>
     </form>
   </div>

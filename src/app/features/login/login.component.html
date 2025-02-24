@@ -37,12 +37,12 @@
                 
                 
                 </div>
-                <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched && loginForm.controls['password'].dirty" class="login__error">
-                {{ getErrorMessage('password') }}
-                </div>
+                <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched && loginForm.controls['password'].touched" class="login__error">
+                    {{ getErrorMessage('password') }}
+                  </div>
             </div>
             <div class="login__actions">
-                <button type="submit" class="login__button" [disabled]="loginForm.invalid">Submit</button>
+                <button type="submit" class="login__button">Submit</button>
             </div>
         </form>
     </div>
