@@ -14,7 +14,9 @@ export class LoginComponent {
 
   public showPassword = false;
   
-  public togglePasswordVisibility(): void {
+  public togglePasswordVisibility(event: MouseEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
     this.showPassword = !this.showPassword;
   }
 
@@ -46,15 +48,9 @@ export class LoginComponent {
     }
   }
 
-    /**
-   * Helper function to check if a string is an email or a plain text.
-   * @param input - The string to check.
-   * @returns A boolean indicating if the input is an email (true) or plain text (false).
-   */
   public isEmail(input: string): boolean {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(input);
   }
-
 
 }

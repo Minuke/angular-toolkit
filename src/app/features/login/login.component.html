@@ -31,11 +31,13 @@
                 formControlName="password"
                 class="login__input login__input--with-icon"
                 />
-                <button type="button" class="password-toggle" (click)="togglePasswordVisibility()">
+                <button type="button" class="password-toggle" (click)="togglePasswordVisibility($event)">
                     <img [src]="showPassword ? 'eye-open.svg' : 'eye-closed.svg'" alt="ddd" class="password-toggle__icon">
-                 </button>
+                </button>
+                
+                
                 </div>
-                <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="login__error">
+                <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched && loginForm.controls['password'].dirty" class="login__error">
                 {{ getErrorMessage('password') }}
                 </div>
             </div>
