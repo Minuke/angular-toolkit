@@ -7,66 +7,68 @@
       <div class="register__field register__field--user">
         <label for="username" class="register__label">Usuario:</label>
         <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="Usuario"
-        autocomplete="username"
-        formControlName="username"
-        class="register__input"
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Usuario"
+          autocomplete="username"
+          formControlName="username"
+          class="register__input"
         />
         <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="register__error">
           {{ getErrorMessage('username') }}
-          </div>
+        </div>
       </div>
       <div class="register__field register__field--email">
         <label for="email" class="register__label">Email:</label>
         <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Email"
-        autocomplete="email"
-        formControlName="email"
-        class="register__input"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          autocomplete="email"
+          formControlName="email"
+          class="register__input"
         />
         <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="register__error">
           {{ getErrorMessage('email') }}
-          </div>
+        </div>
       </div>
-      <div class="register__field register__field--first-pasword">
+      <div class="register__field register__field--first-password">
         <label for="firstPassword" class="register__label">Password:</label>
         <input
-        type="password"
-        id="firstPassword"
-        name="firstPassword"
-        placeholder="Password"
-        autocomplete="new-password"
-        formControlName="firstPassword"
-        class="register__input"
+          type="password"
+          id="firstPassword"
+          name="firstPassword"
+          placeholder="Password"
+          autocomplete="new-password"
+          formControlName="firstPassword"
+          class="register__input"
         />
         <div *ngIf="registerForm.controls['firstPassword'].invalid && registerForm.controls['firstPassword'].touched" class="register__error">
           {{ getErrorMessage('firstPassword') }}
-          </div>
+        </div>
       </div>
       <div class="register__field register__field--second-password">
-        <label for="username" class="register__label">Confirm Password:</label>
+        <label for="secondPassword" class="register__label">Confirm Password:</label>
         <input
-        type="password"
-        id="secondPassword"
-        name="secondPassword"
-        placeholder="Confirm Password"
-        autocomplete="new-password"
-        formControlName="secondPassword"
-        class="register__input"
+          type="password"
+          id="secondPassword"
+          name="secondPassword"
+          placeholder="Confirm Password"
+          autocomplete="new-password"
+          formControlName="secondPassword"
+          class="register__input"
         />
+      
         <div *ngIf="registerForm.controls['secondPassword'].invalid && registerForm.controls['secondPassword'].touched" class="register__error">
           {{ getErrorMessage('secondPassword') }}
-          </div>
+        </div>
       </div>
+      
       <div class="register__actions">
         <button type="submit" class="register__button" [disabled]="registerForm.invalid">Submit</button>
-    </div>
+      </div>
     </form>
   </div>
 </div>
