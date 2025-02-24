@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import { WrapperButtonComponent } from '@features/button/wrapper-button/wrapper-button.component';
 import { WrapperDynamicTableComponent } from '@features/dynamic-table/wrapper-dynamic-table/wrapper-dynamic-table.component';
-import { InputPasswordComponent } from '@features/input-password/input-password.component';
-import { InputComponent } from '@features/input/input.component';
 import { LoginComponent } from '@features/login/login.component';
 import { ReactiveFormComponent } from '@features/reactive-form/reactive-form.component';
 import { RegisterComponent } from '@features/register/register.component';
@@ -49,15 +47,5 @@ export const routes: Routes = [
     path: "register",
     component: RegisterComponent,
     title: "Register",
-  },
-  {
-    path: "input",
-    component: InputComponent,
-    title: "Input",
-  },
-  {
-    path: "input-password",
-    component: InputPasswordComponent,
-    title: "Input Password",
   },
 ];
