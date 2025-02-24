@@ -12,6 +12,12 @@ export class LoginComponent {
 
   private readonly formBuilder: FormBuilder = inject(FormBuilder);
 
+  public showPassword = false;
+  
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
   public loginForm = this.formBuilder.group({
       userIdentifier: ['', Validators.required],
       password: ['', Validators.required],

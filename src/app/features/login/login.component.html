@@ -21,15 +21,20 @@
             </div>
             <div class="login__field login__field--password">
                 <label for="password" class="login__label">Password:</label>
+                <div class="login__input-container">
                 <input
-                type="password"
+                [type]="showPassword ? 'text' : 'password'"
                 id="password"
                 name="password"
                 placeholder="Contraseña"
                 autocomplete="current-password"
                 formControlName="password"
-                class="login__input"
+                class="login__input login__input--with-icon"
                 />
+                <button type="button" class="password-toggle" (click)="togglePasswordVisibility()">
+                    <img [src]="showPassword ? 'eye-open.svg' : 'eye-closed.svg'" alt="ddd" class="password-toggle__icon">
+                 </button>
+                </div>
                 <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="login__error">
                 {{ getErrorMessage('password') }}
                 </div>

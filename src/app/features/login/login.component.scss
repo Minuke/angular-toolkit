@@ -1,3 +1,4 @@
+// Agrupando las clases en login
 .login {
   display: grid;
   grid-template-areas:
@@ -70,6 +71,11 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+
+    &--with-icon {
+      width: 100%;
+      padding-right: 30px;
+    }
   }
 
   &__error {
@@ -102,6 +108,31 @@
       color: #666;
       cursor: not-allowed;
       pointer-events: none;
+    }
+  }
+
+  &__field--password {
+    position: relative;
+
+    .login__input-container {
+      display: flex;
+      align-items: center;
+
+      .password-toggle {
+        position: absolute;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        outline: none;
+
+        &__icon { // Estilos para la imagen del ojo
+          width: 24px;
+          height: 24px;
+          display: block; // Asegurar que la imagen ocupa el tamaño definido
+        }
+      }
     }
   }
 }
