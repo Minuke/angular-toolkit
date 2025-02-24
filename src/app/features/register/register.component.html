@@ -36,30 +36,40 @@
       </div>
       <div class="register__field register__field--first-password">
         <label for="firstPassword" class="register__label">Password:</label>
+        <div class="register__input-container">
         <input
-          type="password"
+          [type]="showFirstPassword ? 'text' : 'password'"
           id="firstPassword"
           name="firstPassword"
           placeholder="Password"
           autocomplete="new-password"
           formControlName="firstPassword"
-          class="register__input"
+          class="register__input register__input--with-icon"
         />
+        <button type="button" class="password-toggle" (click)="togglePasswordVisibility('first', $event)">
+          <img [src]="showFirstPassword ? 'eye-open.svg' : 'eye-closed.svg'" alt="ddd" class="password-toggle__icon">
+       </button>
+      </div>
         <div *ngIf="registerForm.controls['firstPassword'].invalid && registerForm.controls['firstPassword'].touched" class="register__error">
           {{ getErrorMessage('firstPassword') }}
         </div>
       </div>
       <div class="register__field register__field--second-password">
         <label for="secondPassword" class="register__label">Confirm Password:</label>
+        <div class="register__input-container">
         <input
-          type="password"
+          [type]="showSecondPassword ? 'text' : 'password'"
           id="secondPassword"
           name="secondPassword"
           placeholder="Confirm Password"
           autocomplete="new-password"
           formControlName="secondPassword"
-          class="register__input"
+          class="register__input register__input--with-icon"
         />
+        <button type="button" class="password-toggle" (click)="togglePasswordVisibility('second', $event)">
+          <img [src]="showSecondPassword ? 'eye-open.svg' : 'eye-closed.svg'" alt="ddd" class="password-toggle__icon">
+       </button>
+      </div>
       
         <div *ngIf="registerForm.controls['secondPassword'].invalid && registerForm.controls['secondPassword'].touched" class="register__error">
           {{ getErrorMessage('secondPassword') }}

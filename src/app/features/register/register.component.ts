@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, Renderer2 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { passwordMatchValidator } from '@shared/validators/password-match.validator';
 
@@ -11,6 +11,30 @@ import { passwordMatchValidator } from '@shared/validators/password-match.valida
 })
 export class RegisterComponent {
   private readonly formBuilder: FormBuilder = inject(FormBuilder);
+  private renderer: Renderer2 = inject(Renderer2);
+
+
+  public showFirstPassword = false;
+  public showSecondPassword = false;
+  public isPasswordVisibleChange = false;  // Bandera para controlar la validación
+  
+  public togglePasswordVisibility(orden: string, evento: Event): void {
+    evento.stopPropagation(); // Evitar la propagación del evento
+    if(orden === 'first'){
+      this.showFirstPassword = !this.showFirstPassword;
+    }
+    if(orden === 'second'){ 
+      this.showSecondPassword = !this.showSecondPassword;
+  }
+  this.isPasswordVisibleChange = true;
+   // Aseguramos que el foco no se pierda
+   setTimeout(() => {
+    const input = document.getElementById(orden === 'first' ? 'firstPassword' : 'secondPassword');
+    if (input) {
+      this.renderer.selectRootElement(input).focus();  // Volver a enfocar el input
+    }
+  }, 0);  // Se ejecuta después de que Angular haya terminado de procesar el ciclo
+}
 
   public registerForm = this.formBuilder.group({
     username: ['', Validators.required],
