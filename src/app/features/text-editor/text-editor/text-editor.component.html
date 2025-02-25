@@ -1,7 +1,7 @@
 <div class="editor" >
   
   <div class="editor__toolbar">
-    <app-toolbar></app-toolbar>
+    <app-toolbar (iconSelected)="onIconSelected($event)"></app-toolbar>
   </div>
 
   <div class="editor__content">

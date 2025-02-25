@@ -1,5 +1,8 @@
+<!-- toolbar.component.html -->
 <div class="toolbar">
-  <img src="bold.svg" alt="Negrita" class="toolbar__icon" [ngClass]="{'toolbar__icon--active': activeIcon === 'bold'}" (click)="setActive('bold')">
-  <img src="italic.svg" alt="Itálica" class="toolbar__icon" [ngClass]="{'toolbar__icon--active': activeIcon === 'italic'}" (click)="setActive('italic')">
-  <img src="underline.svg" alt="Subrayado" class="toolbar__icon" [ngClass]="{'toolbar__icon--active': activeIcon === 'underline'}" (click)="setActive('underline')">
+  <img src="bold.svg" alt="Negrita" 
+  class="toolbar__icon" 
+  [ngClass]="{'toolbar__icon--active': activeIcon === 'bold'}" 
+  (mousedown)="setActive('bold', $event)">
+
 </div>

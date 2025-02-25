@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,10 +9,16 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
   
-  public activeIcon: string = "";
+  public activeIcon: string = '';
 
-  public setActive(icon: string): void {
+  @Output() iconSelected: EventEmitter<string> = new EventEmitter<string>();
+
+  public setActive(icon: string, event: MouseEvent): void {
+    event.preventDefault(); // Previene que el botón reciba el foco
     this.activeIcon = icon;
+    this.iconSelected.emit(this.activeIcon);
   }
+  
+  
   
 }
