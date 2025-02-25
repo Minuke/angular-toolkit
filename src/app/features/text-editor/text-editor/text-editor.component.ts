@@ -10,5 +10,19 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
 })
 export class TextEditorComponent {
   public text: string = "";
+  public selectedText: string = '';
 
+  public onTypedText(event: any): void {
+    this.text = event.target.innerText;
+    console.log(this.text)
+  }
+
+  public onSelectedText(): void {
+    const selection = window.getSelection();
+    if (selection) {
+      this.selectedText = selection.toString();
+      console.log(this.selectedText)
+    }
+  }
+  
 }
