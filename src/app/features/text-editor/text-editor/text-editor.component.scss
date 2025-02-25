@@ -11,7 +11,9 @@
 
   &__toolbar {
     grid-area: toolbar;
-
+    display: flex;
+    justify-content: start;
+    align-items: center;
   }
 
   &__content {
