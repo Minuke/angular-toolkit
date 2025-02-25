@@ -1,15 +1,30 @@
 .editor {
-
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-areas: 
+    "toolbar"
+    "content";
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px auto;
 
   &__toolbar {
+    grid-area: toolbar;
 
   }
 
   &__content {
+    grid-area: content;
+    border: 3px solid #000;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
 
   }
 
   &__text-area {
-
+    outline: none;
+    padding: 20px;
   }
 }
