@@ -6,7 +6,7 @@ import { ReactiveFormComponent } from '@features/reactive-form/reactive-form.com
 import { RegisterComponent } from '@features/register/register.component';
 import { ResetPasswordComponent } from '@features/reset-password/reset-password.component';
 import { TableComponent } from '@features/table/table.component';
-import { TextEditorComponent } from '@features/text-editor/text-editor.component';
+import { TextEditorComponent } from '@features/text-editor/text-editor/text-editor.component';
 import { HomeComponent } from '@shared/components/home/home.component';
 
 export const routes: Routes = [
