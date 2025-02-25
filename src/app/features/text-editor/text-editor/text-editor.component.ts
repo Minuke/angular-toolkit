@@ -9,6 +9,7 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
   styleUrl: './text-editor.component.scss'
 })
 export class TextEditorComponent {
+  
   public text: string = "";
   public selectedText: string = '';
 

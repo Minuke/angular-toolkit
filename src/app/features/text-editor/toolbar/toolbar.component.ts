@@ -14,4 +14,5 @@ export class ToolbarComponent {
   public setActive(icon: string): void {
     this.activeIcon = icon;
   }
+  
 }
